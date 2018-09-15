@@ -1,0 +1,241 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/* CLASSES
+============================================================================ */
+%loading-bg {
+  background-image: url('#{$base-url}loading.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: palette('loading', 'background');
+}
+
+%loading-el {
+  overflow: hidden;
+
+  cursor: wait;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: layer('modal');
+
+    content: '';
+  }
+}
+
+/// Content which loads **after** the page does, should be informed to user.
+///
+/// `[aria-busy='true']` adds a loading background to any loading element
+/// which can't be a parent and a pseudo element over any element other than
+/// `html`.
+///
+/// Don't forget to customize it to your needs. Speacially the background
+/// color.
+///
+/// Already applied to `embed` and `img`, which can cause issues with
+/// transparent images.
+///
+/// @author Sobral
+/// @group helpers
+///
+/// @example html
+///
+/// <dialog open aria-busy="true">
+///   <form method="dialog">
+///     [...]
+///   </form>
+/// </dialog>
+///
+[aria-busy='true'] {
+  > body,
+  &:not(html) {
+    @extend %loading-bg;
+    @extend %loading-el;
+  }
+}
+
+img:not([src$='.png']):not([src$='.gif']),
+embed {
+  @extend %loading-bg;
+
+  background-size: auto;
+
+  &::after {
+    /*
+     *  Future proof reset
+     */
+    content: none;
+  }
+}
+
+input,
+output,
+keygen,
+textarea {
+  &[aria-busy='true'] {
+    @extend %loading-bg;
+
+    background-size: auto;
+  }
+}
+
+
+/// Load grid image background under the class `grid`
+///
+/// @author Sobral
+/// @group helpers
+///
+/// @example html
+/// <html class="grid">
+///   <body>
+///     [...]
+///   </body>
+/// </html>
+///
+.grid {
+  &::after,
+  &:root::before {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    z-index: layer('modal');
+
+    font-size: 1rem;
+
+    pointer-events: none;
+
+    content: 'breakpoint: phone';
+  }
+
+  &::after {
+    bottom: 0;
+    left: 0;
+
+    background-image: grid-image(2);
+    background-position: center top;
+
+    content: '';
+
+    @media screen and (min-width: breakpoint('3col')) {
+      background-image: grid-image(3);
+    }
+
+    @media screen and (min-width: breakpoint('4col')) {
+      background-image: grid-image(4);
+    }
+
+    @media screen and (min-width: breakpoint('5col')) {
+      background-image: grid-image(5);
+    }
+
+    @media screen and (min-width: breakpoint('6col')) {
+      background-image: grid-image(6);
+    }
+
+    @media screen and (min-width: breakpoint('7col')) {
+      background-image: grid-image(7);
+      background-size: $max-width 100%;
+    }
+
+    @media screen and (min-width: breakpoint('8col')) {
+      background-image: grid-image(8);
+    }
+
+    @media screen and (min-width: breakpoint('9col')) {
+      background-image: grid-image(9);
+    }
+
+    @media screen and (min-width: breakpoint('10col')) {
+      background-image: grid-image(10);
+    }
+
+    @media screen and (min-width: breakpoint('11col')) {
+      background-image: grid-image(11);
+    }
+
+    @media screen and (min-width: breakpoint('12col')) {
+      background-image: grid-image(12);
+    }
+
+    @media screen and (min-width: breakpoint('13col')) {
+      background-image: grid-image(13);
+    }
+
+    @media screen and (min-width: breakpoint('14col')) {
+      background-image: grid-image(14);
+    }
+
+    @media screen and (min-width: breakpoint('15col')) {
+      background-image: grid-image(15);
+    }
+  }
+
+  &:root::before {
+    padding: $gutter;
+
+    background-color: palette('debug');
+
+    content: 'breakpoint: 2col';
+
+    opacity: 0.75;
+
+    @media screen and (min-width: breakpoint('3col')) {
+      content: 'breakpoint: 3col';
+    }
+
+    @media screen and (min-width: breakpoint('4col')) {
+      content: 'breakpoint: 4col';
+    }
+
+    @media screen and (min-width: breakpoint('5col')) {
+      content: 'breakpoint: 5col';
+    }
+
+    @media screen and (min-width: breakpoint('6col')) {
+      content: 'breakpoint: 6col';
+    }
+
+    @media screen and (min-width: breakpoint('7col')) {
+      content: 'breakpoint: 7col';
+    }
+
+    @media screen and (min-width: breakpoint('8col')) {
+      content: 'breakpoint: 8col';
+    }
+
+    @media screen and (min-width: breakpoint('9col')) {
+      content: 'breakpoint: 9col';
+    }
+
+    @media screen and (min-width: breakpoint('10col')) {
+      content: 'breakpoint: 10col';
+    }
+
+    @media screen and (min-width: breakpoint('11col')) {
+      content: 'breakpoint: 11col';
+    }
+
+    @media screen and (min-width: breakpoint('12col')) {
+      content: 'breakpoint: 12col';
+    }
+
+    @media screen and (min-width: breakpoint('13col')) {
+      content: 'breakpoint: 13col';
+    }
+
+    @media screen and (min-width: breakpoint('14col')) {
+      content: 'breakpoint: 14col';
+    }
+
+    @media screen and (min-width: breakpoint('15col')) {
+      content: 'breakpoint: 15col';
+    }
+  }
+}
