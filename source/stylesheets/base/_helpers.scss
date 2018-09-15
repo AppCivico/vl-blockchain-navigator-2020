@@ -92,6 +92,8 @@ textarea {
 /// </html>
 ///
 .grid {
+  $n: 1;
+
   &::after,
   &:root::before {
     position: fixed;
@@ -115,59 +117,6 @@ textarea {
     background-position: center top;
 
     content: '';
-
-    @media screen and (min-width: breakpoint('3col')) {
-      background-image: grid-image(3);
-    }
-
-    @media screen and (min-width: breakpoint('4col')) {
-      background-image: grid-image(4);
-    }
-
-    @media screen and (min-width: breakpoint('5col')) {
-      background-image: grid-image(5);
-    }
-
-    @media screen and (min-width: breakpoint('6col')) {
-      background-image: grid-image(6);
-    }
-
-    @media screen and (min-width: breakpoint('7col')) {
-      background-image: grid-image(7);
-      background-size: $max-width 100%;
-    }
-
-    @media screen and (min-width: breakpoint('8col')) {
-      background-image: grid-image(8);
-    }
-
-    @media screen and (min-width: breakpoint('9col')) {
-      background-image: grid-image(9);
-    }
-
-    @media screen and (min-width: breakpoint('10col')) {
-      background-image: grid-image(10);
-    }
-
-    @media screen and (min-width: breakpoint('11col')) {
-      background-image: grid-image(11);
-    }
-
-    @media screen and (min-width: breakpoint('12col')) {
-      background-image: grid-image(12);
-    }
-
-    @media screen and (min-width: breakpoint('13col')) {
-      background-image: grid-image(13);
-    }
-
-    @media screen and (min-width: breakpoint('14col')) {
-      background-image: grid-image(14);
-    }
-
-    @media screen and (min-width: breakpoint('15col')) {
-      background-image: grid-image(15);
-    }
   }
 
   &:root::before {
@@ -178,57 +127,27 @@ textarea {
     content: 'breakpoint: 2col';
 
     opacity: 0.75;
+  }
 
-    @media screen and (min-width: breakpoint('3col')) {
-      content: 'breakpoint: 3col';
+  @each $key, $value in $breakpoints {
+    $n: $n + 1;
+
+    @if $value <= $max-width and map-get($toggle-breakpoints, $key) == null {
+      @media screen and (min-width: breakpoint($key)) {
+        &::after {
+          background-image: grid-image($n);
+        }
+
+        &:root::before {
+          content: 'breakpoint: `#{$key}`';
+        }
+      }
     }
+  }
 
-    @media screen and (min-width: breakpoint('4col')) {
-      content: 'breakpoint: 4col';
-    }
-
-    @media screen and (min-width: breakpoint('5col')) {
-      content: 'breakpoint: 5col';
-    }
-
-    @media screen and (min-width: breakpoint('6col')) {
-      content: 'breakpoint: 6col';
-    }
-
-    @media screen and (min-width: breakpoint('7col')) {
-      content: 'breakpoint: 7col';
-    }
-
-    @media screen and (min-width: breakpoint('8col')) {
-      content: 'breakpoint: 8col';
-    }
-
-    @media screen and (min-width: breakpoint('9col')) {
-      content: 'breakpoint: 9col';
-    }
-
-    @media screen and (min-width: breakpoint('10col')) {
-      content: 'breakpoint: 10col';
-    }
-
-    @media screen and (min-width: breakpoint('11col')) {
-      content: 'breakpoint: 11col';
-    }
-
-    @media screen and (min-width: breakpoint('12col')) {
-      content: 'breakpoint: 12col';
-    }
-
-    @media screen and (min-width: breakpoint('13col')) {
-      content: 'breakpoint: 13col';
-    }
-
-    @media screen and (min-width: breakpoint('14col')) {
-      content: 'breakpoint: 14col';
-    }
-
-    @media screen and (min-width: breakpoint('15col')) {
-      content: 'breakpoint: 15col';
+  @media screen and (min-width: $max-width) {
+    &::after {
+      background-size: $max-width 100%;
     }
   }
 }
