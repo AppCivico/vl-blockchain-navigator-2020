@@ -1,0 +1,124 @@
+<article class="search-result">
+  <div class="search-result__metadata">
+    <dl>
+      <div class="search-result__time">
+        <dt>
+          {{ i18n "time" }}
+        </dt>
+        <dd>
+          <time datetime="2018-07-25T06:00">06:00</time>
+        </dd>
+      </div>
+      <div class="search-result__total-receitps">
+        <dt>
+          {{ i18n "totalReceipts" }}
+        </dt>
+        <dd>
+          100.000
+        </dd>
+      </div>
+      <div class="search-result__total-amount">
+        <dt>
+          {{ i18n "totalAmount" }}
+        </dt>
+        <dd>
+          R$500.000
+        </dd>
+      </div>
+      <div class="search-result__block">
+        <dt>
+          {{ i18n "block" }}
+        </dt>
+        <dd>
+          325075
+        </dd>
+      </div>
+      <div>
+        <dt class="search-result__hash">
+          {{ i18n "hash" }}
+        </dt>
+        <dd>
+          a6b37c4d9e8f27d3e4a8c3f2d6e3a2c9b1a7b3c6a67c2e4f1da5f9b4d7c2
+        </dd>
+      </div>
+    </dl>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          {{ i18n "candidate" }}
+        </th>
+        <th>
+          {{ i18n "hash" }}
+        </th>
+        <th>
+          {{ i18n "dateTime" }}
+        </th>
+        <th>
+          {{ i18n "transactionId" }}
+        </th>
+        <th class="numeric">
+          {{ i18n "amount" }}
+        </th>
+        <th>
+          {{ i18n "payment" }}
+        </th>
+        <th>
+          {{ i18n "receipt" }}
+        </th>
+        <th>
+          {{ i18n "donor" }}
+        </th>
+        <th>
+          {{ i18n "cpf" | markdownify }}
+        </th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th>
+          {{ i18n "candidate" }}
+        </th>
+        <th>
+          {{ i18n "hash" }}
+        </th>
+        <th>
+          {{ i18n "dateTime" }}
+        </th>
+        <th>
+          {{ i18n "transactionId" }}
+        </th>
+        <th class="numeric">
+          {{ i18n "amount" }}
+        </th>
+        <th>
+          {{ i18n "payment" }}
+        </th>
+        <th>
+          {{ i18n "receipt" }}
+        </th>
+        <th>
+          {{ i18n "donor" }}
+        </th>
+        <th>
+          {{ i18n "cpf" | markdownify }}
+        </th>
+      </tr>
+    </tfoot>
+    <tbody>
+      {{ partial "microtemplates/blockDetail.html" . }}
+      {{ partial "microtemplates/blockDetail.html" . }}
+      {{ partial "microtemplates/blockDetail.html" . }}
+      {{ partial "microtemplates/blockDetail.html" . }}
+      {{ partial "microtemplates/blockDetail.html" . }}
+      {{ partial "microtemplates/blockDetail.html" . }}
+      {{ partial "microtemplates/blockDetail.html" . }}
+      {{ partial "microtemplates/blockDetail.html" . }}
+      {{ partial "microtemplates/blockDetail.html" . }}
+      {{ partial "microtemplates/blockDetail.html" . }}
+      {{ partial "microtemplates/blockDetail.html" . }}
+      {{ partial "microtemplates/blockDetail.html" . }}
+    </tbody>
+  </table>
+</article>

@@ -1,0 +1,16 @@
+{{ with .Site.Data.mediaClipping.list }}
+  <article class="media-clipping">
+    <div class="container">
+      <h1>{{ i18n "mediaClipping" }}</h1>
+      <ul>
+        {{ range . }}
+          <li class="{{ .slug }}">
+            <a href="{{ .link }}">
+              <img src="{{ .logotype }}" alt="{{ .alt | default .name }}">
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </article>
+{{ end }}

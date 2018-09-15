@@ -1,0 +1,57 @@
+{{ with .Site.GetPage "/search" }}
+<article class="search">
+  <div class="container">
+    {{ with .Title }}
+      <h1>
+        {{ . }}
+      </h1>
+    {{ end }}
+    <form method="get"
+      name="mc-embedded-subscribe-form"
+      class="validate">
+      <fieldset class="container">
+
+        <p>
+          <label for="search-for">{{ i18n "dateOrHash" }}</label>
+          <input type="text" value="" name="search-for" id="search-for">
+        </p>
+
+        <!-- real people should not fill this in and expect good things -->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        <input type="text"
+        name="b_a6b37c4d9e8f27d3e4a8c3f2d6e3a2c9b1a7b3c6a67c2e4f1da5f9b4d7c2"
+        tabindex="-1" value="">
+        </div>
+
+        <button type="submit" name="subscribe">
+          {{ i18n "execute" }}
+        </button>
+      </fieldset>
+    </form>
+
+    {{ .Content }}
+  </div>
+
+  <section class="search__results">
+    <div class="container">
+      <header>
+        <h2>{{ i18n "results" }}</h2>
+        <time datetime="2018-07-25">25.07.18</time>
+      </header>
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+      {{ partial "microtemplates/searchResult.html" . }}
+    </div>
+  </section>
+</article>
+{{ end }}

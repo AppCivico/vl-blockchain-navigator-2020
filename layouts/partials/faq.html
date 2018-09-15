@@ -1,0 +1,24 @@
+{{ with .Site.GetPage "/faq" }}
+  <article class="faq">
+    <div class="container">
+      {{ with .Title }}
+        <h1>
+          {{ . }}
+        </h1>
+      {{ end }}
+
+      {{ .Content }}
+
+      {{ with .Resources }}
+        <section class="faq__questions">
+          {{ range . }}
+            <details>
+              <summary>{{ .Title }}</summary>
+              {{ .Content }}
+            </details>
+          {{ end }}
+        </section>
+      {{ end }}
+    </div>
+  </article>
+{{ end }}

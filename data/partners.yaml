@@ -1,0 +1,67 @@
+list:
+  - alt: ""
+    link: "https://www.youtube.com"
+    logotype: ""
+    name: TEDx
+    slug: tedx
+    weight: 0
+  - alt: ""
+    link: "https://brasil.elpais.com"
+    logotype: ""
+    name: El País
+    slug: el-pais
+    weight: 0
+  - alt: ""
+    link: "http://cbn.globoradio.globo.com"
+    logotype: ""
+    name: CBN
+    slug: cbn
+    weight: 0
+  - alt: ""
+    link: "http://politica.estadao.com.br"
+    logotype: ""
+    name: Estadão
+    slug: estadao
+    weight: 0
+  - alt: ""
+    link: "http://g1.globo.com"
+    logotype: ""
+    name: Jornal Nacional
+    slug: jornal-nacional
+    weight: 0
+  - alt: ""
+    link: "http://www1.folha.uol.com.br"
+    logotype: ""
+    name: Folha de São Paulo
+    slug: folha-sp
+    weight: 0
+  - alt: ""
+    link: "https://super.abril.com.br"
+    logotype: ""
+    name: Super Interessante
+    slug: super-interessante
+    weight: 0
+  - alt: ""
+    link: "https://www.nexojornal.com.br"
+    logotype: ""
+    name: Nexo
+    slug: nexo
+    weight: 0
+  - alt: ""
+    link: "https://br.noticias.yahoo.com"
+    logotype: ""
+    name: Yahoo
+    slug: yahoo
+    weight: 0
+  - alt: ""
+    link: "https://portaldobitcoin.com"
+    logotype: ""
+    name: Portal do Bitcoin
+    slug: portal-bitcoin
+    weight: 0
+  - alt: ""
+    link: "https://livecoins.com.br"
+    logotype: ""
+    name: Livecoins
+    slug: livecoins
+    weight: 0
