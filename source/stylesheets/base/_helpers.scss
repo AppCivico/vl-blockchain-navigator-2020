@@ -151,3 +151,14 @@ textarea {
     }
   }
 }
+
+.container {
+  max-width: $max-width;
+
+  padding-top: $leading * 7rem;
+  padding-right: $gutter;
+  padding-bottom: $leading * 7rem;
+  padding-left: $gutter;
+  margin-right: auto;
+  margin-left: auto;
+}
