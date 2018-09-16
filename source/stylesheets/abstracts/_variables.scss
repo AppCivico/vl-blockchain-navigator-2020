@@ -12,7 +12,7 @@
 ///
 /// @example scss
 /// $title-font-stack: ComicSans, $basic-title-font-stack;
-$title-font-stack: $basic-title-font-stack !default;
+$title-font-stack: 'Miriam Libre', $basic-title-font-stack !default;
 
 
 /// Text body font stack
@@ -23,7 +23,7 @@ $title-font-stack: $basic-title-font-stack !default;
 ///
 /// @example scss
 /// $text-font-stack: ComicSans, $native-font-stack;
-$text-font-stack: $native-font-stack !default;
+$text-font-stack: 'Miriam Libre', $native-font-stack !default;
 
 
 /// Code (monospace) font stack
@@ -34,7 +34,7 @@ $text-font-stack: $native-font-stack !default;
 ///
 /// @example scss
 /// $code-font-stack: ComicSans, $basic-code-font-stack;
-$code-font-stack: $basic-code-font-stack !default;
+$code-font-stack: 'Miriam Libre', $basic-code-font-stack !default;
 
 
 /// Font weights map
@@ -45,8 +45,8 @@ $code-font-stack: $basic-code-font-stack !default;
 /// @type Map
 $font-weights: (
   'text': 400,
-  'bold': 600,
-  'heading': 600,
+  'bold': 700,
+  'heading': 700,
 );
 
 
