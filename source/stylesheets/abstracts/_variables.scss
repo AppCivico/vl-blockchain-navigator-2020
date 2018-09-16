@@ -97,16 +97,46 @@ $modularscale: (
 /// @prop {color | map} color.tone - Pure colors or returned color value of functions
 /// @require {function} palette
 /// @todo Customize the colors or add new ones to match your design needs.
+
+$green--x-light: rgb(53, 211, 79);
+$green--light: rgb(8, 180, 146);
+$green: rgb(51, 153, 153);
+$green--dark: rgb(29, 122, 139);
+$green--x-dark: rgb(30, 91, 102);
+$gray--x-light: rgb(245, 245, 245);
+$gray--light: rgb(136, 136, 136);
+$gray: rgb(186, 186, 186);
+$gray--dark: rgb(228, 228, 228);
+$gray--x-dark: rgb(75, 75, 75);
+$lightest: rgb(245, 245, 245);
+$darkest: rgb(75, 75, 75);
+$petrol: rgb(45, 71, 93);
+$petrol--dark: rgb(35, 61, 84);
 $palette: (
   'gray': (
-    'x-light': tint(rgb(229, 231, 234), 10%),
-    'light': rgb(229, 231, 234),
-    'base': rgb(151, 153, 156),
-    'dark': rgb(64, 68, 71),
-    'x-dark': shade(rgb(64, 68, 71), 10%),
+    'x-light': $gray--x-light,
+    'light': $gray--light,
+    'base': $gray,
+    'dark': $gray--dark,
+    'x-dark': $gray--x-dark,
   ),
   'white': rgb(255, 255, 255),
   'black': rgb(0, 0, 0),
+  'green': (
+    'x-light': $green--x-light,
+    'light': $green--light,
+    'base': $green,
+    'dark': $green--dark,
+    'x-dark': $green--x-dark,
+  ),
+  'petrol': (
+    'base': $petrol,
+    'dark': $petrol--dark,
+  ),
+  'shadow': (
+    'base': rgba(86, 121, 192, 0.3),
+    'reverse': transparentize($lightest, 0.75),
+  ),
   'debug': rgb(255, 0, 0),
   'anchor': (
     'base': rgb(0, 102, 204),
@@ -159,11 +189,36 @@ $palette: (
   'tap-highlight': rgb(255, 94, 153),
   'target-highlight': rgb(255, 255, 102),
   'text': (
-    'dark': hsl(0, 0%, 13%),
-    'light': rgb(229, 231, 234),
+    'light': $lightest,
+    'dark': $darkest,
   ),
 );
 
+/// Gradient steps
+/// @type list
+$gradient-steps: rgb(104, 138, 58),
+rgb(122, 157, 66),
+rgb(141, 178, 76),
+rgb(156, 193, 84),
+rgb(170, 202, 107),
+rgb(185, 212, 133),
+rgb(80, 124, 58),
+rgb(84, 149, 164),
+rgb(104, 159, 78),
+rgb(115, 173, 87),
+rgb(132, 185, 111),
+rgb(152, 198, 135),
+rgb(59, 104, 93),
+rgb(77, 136, 123),
+rgb(84, 149, 135),
+rgb(98, 164, 152),
+rgb(119, 180, 170),
+rgb(74, 130, 142),
+rgb(84, 149, 164),
+rgb(96, 170, 191),
+rgb(106, 187, 210),
+rgb(116, 197, 216),
+rgb(132, 208, 224);
 
 /// Default border-radius
 /// @todo Customize it to match your design.
