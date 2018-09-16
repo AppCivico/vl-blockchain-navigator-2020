@@ -12,9 +12,11 @@
       {{ with .Resources }}
         <section class="faq__questions">
           {{ range . }}
-            <details>
-              <summary>{{ .Title }}</summary>
-              {{ .Content }}
+            <details class="faq-item">
+              <summary class="faq-item__question">{{ .Title }}</summary>
+              <div class="faq-item__answer">
+                {{ .Content }}
+              </div>
             </details>
           {{ end }}
         </section>

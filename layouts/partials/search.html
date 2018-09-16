@@ -7,9 +7,9 @@
       </h1>
     {{ end }}
     <form method="get"
-      name="mc-embedded-subscribe-form"
-      class="validate">
-      <fieldset class="container">
+      name="search__form"
+      class="search-form">
+      <fieldset>
 
         <p>
           <label for="search-for">{{ i18n "dateOrHash" }}</label>
@@ -29,7 +29,11 @@
       </fieldset>
     </form>
 
-    {{ .Content }}
+    {{ with .Content }}
+      <div class="search__helper">
+        {{ . }}
+      </div>
+    {{ end }}
   </div>
 
   <section class="search__results">
