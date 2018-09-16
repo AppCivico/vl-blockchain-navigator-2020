@@ -75,6 +75,10 @@ p {
     font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;*/
   margin-top: 0;
   margin-bottom: $leading * 1em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 /**
