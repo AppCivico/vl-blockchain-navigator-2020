@@ -1,5 +1,3 @@
-/* TABLES
-============================================================================ */
 table,
 thead,
 tbody,
@@ -96,6 +94,8 @@ tbody th {
 tbody td {
   text-align: right;
 
+  font-variant-numeric: lining-nums oldstyle-nums;
+
   @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
     text-align: left;
 
@@ -111,8 +111,6 @@ tbody td {
       }
     }
   }
-
-  font-variant-numeric: lining-nums oldstyle-nums;
 }
 
 td img {
@@ -121,7 +119,6 @@ td img {
 
 tbody tr:nth-of-type(odd) > th,
 tbody tr:nth-of-type(odd) > td {
-
   @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
     background-color: transparent;
   }
