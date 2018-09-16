@@ -9,13 +9,13 @@
 
   <meta content="width=device-width,initial-scale=1.0" name="viewport">
 
-  {{ $style := resources.Get "styles/index.css" | fingerprint }}
+  {{ $style := resources.Get "assets/styles/index.css" | fingerprint }}
 
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
   {{ if eq (getenv "NODE_ENV") "development" }}
 
-    {{ $style := resources.Get "styles/qa.css" | fingerprint }}
+    {{ $style := resources.Get "assets/styles/qa.css" | fingerprint }}
 
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
   {{ end }}
