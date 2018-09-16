@@ -1,0 +1,48 @@
+.faq-item {
+}
+
+.faq-item > * {
+  padding: $leading * 1rem;
+  margin-bottom: $leading * 1rem;
+
+  border-radius: $rounded-corner;
+}
+
+.faq-item__question {
+  $left-border: 10px;
+  $i: 0;
+
+  padding-left: calc(#{$leading * 1rem} - #{$left-border});
+
+  color: palette('text', 'dark');
+
+  background-image: image('opener.png');
+  background-position: right #{$leading * 1rem} top 50%;
+  background-color: palette('white');
+
+  border-left-width: $left-border;
+  border-left-style: solid;
+
+  box-shadow: 0 0 6px 0 palette('shadow');
+
+  &::before,
+  [open] &::before {
+    content: none;
+  }
+
+  @each $color in $gradient-steps {
+    $i: $i + 1;
+
+    :nth-child(#{$i}n) > & {
+      border-left-color: $color;
+    }
+  }
+}
+
+.faq-item__answer {
+  background-color: palette('shadow', 'reverse');
+}
+
+.faq-item__answer > :last-child {
+  margin-bottom: 0;
+}
