@@ -255,20 +255,20 @@ $gutter: $leading * $body-font-size / 1em * 1rem;
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: _im-to-em(
   (
-    '2col': 320px,
-    '3col': 480px,
-    '4col': 640px,
-    '5col': 800px,
-    '6col': 960px,
-    '7col': 1120px,
-    '8col': 1280px,
-    '9col': 1440px,
-    '10col': 1600px,
-    '11col': 1760px,
-    '12col': 1920px,
-    '13col': 2080px,
-    '14col': 2240px,
-    '15col': 2400px,
+    '4col': 320px,
+    '5col': 480px,
+    '6col': 640px,
+    '7col': 800px,
+    '8col': 960px,
+    '9col': 1120px,
+    '10col': 1280px,
+    '11col': 1440px,
+    '12col': 1600px,
+    '13col': 1760px,
+    '14col': 1920px,
+    '15col': 2080px,
+    '16col': 2240px,
+    '17col': 2400px,
   )
 ) !default;
 $toggle-breakpoints: (
@@ -277,12 +277,9 @@ $toggle-breakpoints: (
 );
 $breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 
-
-
 /// Container's maximum width
 /// @type number
 $max-width: 73.75em !default; // 1180px
-
 
 /// Z-indexes map, gathering all Z layers of the application. Avoid to edit it.
 /// @access public
@@ -293,9 +290,6 @@ $layers: (
   'default': 1,
   'below': -1,
 );
-
-
-
 
 /// Relative or absolute URL where all assets are served from.
 /// @todo Customize it to match your setup.
