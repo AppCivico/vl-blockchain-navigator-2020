@@ -1,13 +1,14 @@
-/* navigation
----------------------------------------------------------------------------- */
 menu,
 nav {
+  display: table;
 }
 
 menu ul,
 menu ol,
 nav ul,
 nav ol {
+  display: table-row;
+
   padding: 0;
   margin: 0;
 
@@ -16,6 +17,8 @@ nav ol {
 
 menu li,
 nav li {
+  display: table-cell;
+
   padding: 0;
   margin: 0;
 
@@ -26,7 +29,12 @@ nav li {
 
 menu a,
 nav a {
+  @include link-undercover;
+
   display: block;
+
+  padding-top: $leading * 1rem;
+  padding-bottom: $leading * 1rem;
 
   overflow: hidden;
 
@@ -35,10 +43,14 @@ nav a {
   }
 }
 
+menu li + li a,
+nav li + li a {
+  padding-left: $gutter;
+}
+
 .current > a {
   pointer-events: none;
 }
-
 
 /* access
 ---------------------------------------------------------------------------- */
@@ -58,7 +70,6 @@ nav a {
 
 .pagination__next {
 }
-
 
 /// .menu-controller styles
 ///
