@@ -31,7 +31,7 @@ metaDataFormat: "yaml"
 title: "Navegador de blocos"
 params:
   credits: "uma iniciativa APPCÍVICO"
-  disclaimer: "Voto Legal é uma plataforma aberta e baseada em software livre. Os realizadores não se responsabilizam pelas informações fornecidas pelos candidatos, nem pelo comportamento deles durante o período eleitoral, e se eleitos, durante seus respectivos mandatos. Este projeto é distribuido sob a licença Affero General Public License."
+  disclaimer: "Voto Legal é uma plataforma aberta e baseada em software livre. Os realizadores não se responsabilizam pelas informações fornecidas pelos candidatos, nem pelo comportamento deles durante o período eleitoral, e se eleitos, durante seus respectivos mandatos. Este projeto é distribuido sob a licença **Affero General Public License**."
   mailchimpNewsletterFormAction: "https://votolegal.list-manage.com/TK"
   siteDescription: ""
   tagline: ""
