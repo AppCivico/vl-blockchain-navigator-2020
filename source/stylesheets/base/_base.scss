@@ -164,6 +164,21 @@ summary {
   }
 }
 
+details[open] summary ~ * {
+  animation: here-comes-the-detail 0.5s ease-in-out;
+
+  @at-root {
+    @keyframes here-comes-the-detail {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
 
 /**
  * Address `[hidden]` styling not present in IE 8/9.
