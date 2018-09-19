@@ -113,7 +113,7 @@ textarea {
     bottom: 0;
     left: 0;
 
-    background-image: grid-image(2);
+    background-image: grid-image($n);
     background-position: center top;
 
     content: '';
@@ -124,7 +124,7 @@ textarea {
 
     background-color: palette('debug');
 
-    content: 'breakpoint: 2col';
+    content: 'breakpoint: #{$n}col';
 
     opacity: 0.75;
   }
