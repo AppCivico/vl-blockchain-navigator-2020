@@ -7,31 +7,31 @@ list:
     weight: 0
   - alt: ""
     link: "https://brasil.elpais.com"
-    logotype: ""
+    logotype: "/images/logo-elpais-branco-copiar.png"
     name: El País
     slug: el-pais
     weight: 0
   - alt: ""
     link: "http://cbn.globoradio.globo.com"
-    logotype: ""
+    logotype: "/images/logo-cbn-branco-copiar.png"
     name: CBN
     slug: cbn
     weight: 0
   - alt: ""
     link: "http://politica.estadao.com.br"
-    logotype: ""
+    logotype: "/images/logo-estadao-branco-copiar.png"
     name: Estadão
     slug: estadao
     weight: 0
   - alt: ""
     link: "http://g1.globo.com"
-    logotype: ""
+    logotype: "/images/logo-jn-branco-copiar.png"
     name: Jornal Nacional
     slug: jornal-nacional
     weight: 0
   - alt: ""
     link: "http://www1.folha.uol.com.br"
-    logotype: ""
+    logotype: "/images/logo-folha-branco-copiar.png"
     name: Folha de São Paulo
     slug: folha-sp
     weight: 0
@@ -43,7 +43,7 @@ list:
     weight: 0
   - alt: ""
     link: "https://www.nexojornal.com.br"
-    logotype: ""
+    logotype: "/images/logo-nexo-branco-copiar.png"
     name: Nexo
     slug: nexo
     weight: 0
