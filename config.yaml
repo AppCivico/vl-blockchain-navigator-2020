@@ -1,4 +1,4 @@
-baseURL: "https://navegador.votolegal.com.br"
+baseURL: "https://blockchain.votolegal.com.br"
 defaultContentLanguage: "pt"
 enableGitInfo: true
 enableMissingTranslationPlaceholders: true
@@ -28,7 +28,7 @@ menu:
     url: "#faq"
     weight: 3
 metaDataFormat: "yaml"
-title: "Navegador de blocos"
+title: "Blockchain explorer"
 params:
   credits: "uma iniciativa APPCÍVICO"
   disclaimer: "Voto Legal é uma plataforma aberta e baseada em software livre. Os realizadores não se responsabilizam pelas informações fornecidas pelos candidatos, nem pelo comportamento deles durante o período eleitoral, e se eleitos, durante seus respectivos mandatos. Este projeto é distribuido sob a licença **Affero General Public License**."
