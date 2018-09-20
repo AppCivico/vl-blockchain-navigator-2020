@@ -1,6 +1,12 @@
 menu,
 nav {
   display: table;
+
+  font-size: ms(2);
+
+  text-align: left;
+
+  color: palette('green', 'dark');
 }
 
 menu ul,
@@ -19,11 +25,22 @@ menu li,
 nav li {
   display: table-cell;
 
-  padding: 0;
+  padding-top: 0;
+  padding-right: $gutter * 0.5;
+  padding-bottom: 0;
+  padding-left: $gutter * 0.5;
   margin: 0;
 
   &::before {
     content: none;
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
   }
 }
 
@@ -38,14 +55,13 @@ nav a {
 
   overflow: hidden;
 
-  &:link {
-    text-decoration: none;
-  }
-}
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration: underline;
 
-menu li + li a,
-nav li + li a {
-  padding-left: $gutter;
+    color: text-contrast(palette('white'), palette('green'));
+  }
 }
 
 .current > a {
