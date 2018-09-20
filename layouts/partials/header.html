@@ -114,11 +114,18 @@
   <header class="site-header">
     <div class="container">
       <div role="banner">
-        <a href="/" class="{{ .Site.LanguageCode }}">
-          {{ .Site.Title }}
-        </a>
+        <div class="banner__voto-legal">
+          <a href="https://votolegal.com.br">
+            VotoLegal
+          </a>
+        </div>
+        <div class="banner__site-title">
+          <a href="/">
+            {{ .Site.Title }}
+          </a>
+        </div>
         {{ with $.Site.Params.tagline }}
-        <div class="site-tagline">{{ . }}</div>
+          <div class="site-tagline">{{ . }}</div>
         {{ end }}
       </div>
 
