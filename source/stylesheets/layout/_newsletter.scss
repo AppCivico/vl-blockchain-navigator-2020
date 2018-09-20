@@ -1,0 +1,32 @@
+.newsletter {
+  color: palette('text', 'light');
+
+  background-color: text-contrast(palette('text', 'light'), palette('green', 'light'));
+
+  @media screen and (min-width: breakpoint('6col')) {
+    text-align: center;
+  }
+}
+
+.newsletter .container {
+  max-width: $max-width--narrow;
+}
+
+.newsletter h1 {
+  color: inherit;
+}
+
+.newsletter form {
+  text-align: left;
+
+  @media screen and (min-width: breakpoint('6col')) {
+    margin-top: $leading * 3rem;
+  }
+}
+
+.newsletter [type='submit'] {
+  display: block;
+
+  margin-right: 0;
+  margin-left: auto;
+}
