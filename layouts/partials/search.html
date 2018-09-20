@@ -1,15 +1,15 @@
 {{ with .Site.GetPage "/search" }}
 <article class="search">
   <div class="container">
-    {{ with .Title }}
-      <h1>
-        {{ . }}
-      </h1>
-    {{ end }}
     <form method="get"
-      name="search__form"
-      class="search-form">
+      name="search-form"
+      class="search__form">
       <fieldset>
+        {{ with .Title }}
+          <legend>
+            {{ . }}
+          </legend>
+        {{ end }}
 
         <p>
           <label for="search-for">{{ i18n "dateOrHash" }}</label>
