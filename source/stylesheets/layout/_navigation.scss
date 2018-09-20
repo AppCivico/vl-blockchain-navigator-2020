@@ -55,6 +55,23 @@ nav li + li a {
 /* access
 ---------------------------------------------------------------------------- */
 .skip-links {
+  display: block;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+.skip-links ul,
+.skip-links li {
+  display: block;
+}
+
+.skip-links a {
+  // sass-lint:disable-block no-important
+  @include visually-hidden--focusable;
+
+  position: relative !important;
 }
 
 /* pagination
