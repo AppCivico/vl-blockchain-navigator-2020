@@ -151,10 +151,10 @@ $palette: (
     'focus': rgb(0, 0 , 0),
     ),
   'button': (
-    'base': rgb(225, 225, 225),
-    'focus': rgb(229, 241, 251),
+    'base': transparent,
+    'focus': transparent,
     'slider': hsl(0, 0%, 40%),
-    'submit': rgb(217, 83, 79),
+    'submit': transparent,
     'reset': transparent,
   ),
   'disabled': (

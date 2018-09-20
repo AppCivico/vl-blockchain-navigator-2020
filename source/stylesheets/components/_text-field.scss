@@ -1,20 +1,26 @@
+@charset 'UTF-8';
+
 /* text inputs
 ---------------------------------------------------------------------------- */
 
 /**
  * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. add some space before text
  */
 %text-field-reset {
   @extend %os-element-reset;
 
   width: 100%;
 
-  padding: 0.1em 0.2em 0;
+  padding: $leading * 0.5rem 0.2em 0 0.45em;
 
-  text-indent: 0.5ex; /* 2 */
+  line-height: $leading * 1.5rem;
+
+  text-indent: 0;
+  vertical-align: baseline;
 
   cursor: text;
+
+  color: palette('text', 'dark');
 
   box-sizing: inherit;
 

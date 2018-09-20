@@ -19,7 +19,9 @@
 
   width: auto; /* 3 */
 
-  padding: 1px 6px; /* 6 */ // sass-lint:disable-line property-units
+  padding: 0; /* 6 */ // sass-lint:disable-line property-units
+  margin-right: 0;
+  margin-left: auto;
 
   overflow: visible; /* 3 */
 
@@ -30,6 +32,7 @@
 
   background-color: palette('button'); /* 5 */
 
+  box-shadow: none;
   box-sizing: inherit;
 
   appearance: button;
@@ -75,6 +78,8 @@ button,
 
 [type='submit'] {
   @extend %button-reset;
+
+  background-color: palette('button', 'submit');
 }
 
 /**
