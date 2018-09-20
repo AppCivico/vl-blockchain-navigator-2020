@@ -139,7 +139,7 @@ textarea {
         }
 
         &:root::before {
-          content: 'breakpoint: `#{$key}`';
+          content: 'breakpoint: #{$key}';
         }
       }
     }
