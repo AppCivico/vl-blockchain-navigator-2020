@@ -1,6 +1,24 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
+.site-header {
+  border-bottom: $stroke solid palette('gray', 'light');
+}
+
+.site-header .container {
+  @include clearfix;
+
+  padding-top: $leading * 1rem;
+  padding-bottom: $leading * 1rem;
+}
+
+.header-menu {
+  width: 100%;
+
+  @media screen and (min-width: breakpoint('7col')) {
+    float: right;
+
+    width: auto;
+  }
+}
+
 /**
  * A region that contains mostly site-oriented content, rather than page-specific content.
  *
@@ -9,34 +27,97 @@
  * Within any `document` or `application`, the author **SHOULD** mark no more than one element with the `banner` role.
  */
 [role='banner'] {
+  text-align: center;
+
+  @media screen and (min-width: breakpoint('5col')) {
+    display: table;
+
+    width: 100%;
+
+    text-align: left;
+
+    border-collapse: collapse;
+  }
+
+  @media screen and (min-width: breakpoint('7col')) {
+    float: left;
+
+    width: auto;
+  }
 }
 
-.site-header {
-  border-bottom: 10px solid palette('gray', 'light');
+[role='banner'] > div {
+  padding-top: $leading * 0.5em;
+  padding-bottom: $leading * 0.5em;
+
+  @media screen and (min-width: breakpoint('5col')) {
+    display: table-cell;
+
+    padding-top: 0;
+    padding-right: $gutter / 2;
+    padding-bottom: 0;
+
+    vertical-align: middle;
+
+    & + div {
+      padding-left: $gutter / 2;
+    }
+  }
 }
 
-.site-header .container {
-  padding-top: 0;
-  padding-bottom: 0;
+.banner__voto-legal {
 }
 
-.header-menu {
-  width: 100%;
-}
+.banner__voto-legal > a {
+  @include image-replacement;
 
+  min-width: 199px;
+  min-height: 57px;
 
-.site-header > a {
-  background-image: images('logo-menu-voto-legal.png');
-  background-position: 0 50%;
+  overflow: hidden;
+
+  background-image: image('logo-menu-voto-legal.png');
+  background-position: 50% 50%;
+  background-size: 199px 57px;
 
   /* @2x Images (Pixel Ratio of 1.25+) */
   @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.25dppx) {
-    background-image: images('logo-menu-voto-legal@2x.png');
+    background-image: image('logo-menu-voto-legal@2x.png');
   }
 
   /* @3x Images (Pixel Ratio of 2.25+) */
   @media only screen and (min-device-pixel-ratio: 2.25), only screen and (min-resolution: 216dpi), only screen and (min-resolution: 2.25dppx) {
-    background-image: images('logo-menu-voto-legal@3x.png');
+    background-image: image('logo-menu-voto-legal@3x.png');
+  }
+
+  @media screen and (min-width: breakpoint('5col')) {
+    background-position: 100% 50%;
   }
 }
 
+.banner__site-title {
+  border-width: $stroke;
+  border-top-style: solid;
+  border-color: palette('gray', 'light');
+
+  @media screen and (min-width: breakpoint('5col')) {
+    border-top-style: none;
+    border-left-style: solid;
+  }
+
+  @media screen and (min-width: breakpoint('7col')) {
+    max-width: 8em;
+  }
+}
+
+[role='banner'] a {
+  @include link-undercover;
+
+  display: block;
+}
+
+.banner__site-title > a {
+  &::first-line {
+    font-weight: font-weight('bold');
+  }
+}
