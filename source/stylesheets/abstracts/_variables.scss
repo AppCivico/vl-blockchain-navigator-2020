@@ -280,6 +280,7 @@ $breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 /// Container's maximum width
 /// @type number
 $max-width: 73.75em !default; // 1180px
+$max-width--narrow: 41.75em;
 
 /// Z-indexes map, gathering all Z layers of the application. Avoid to edit it.
 /// @access public
