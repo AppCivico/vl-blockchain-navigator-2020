@@ -239,48 +239,35 @@ $stroke: 2px !default;
 /// @type number
 $gutter: $leading * $body-font-size / 1em * 1rem;
 
-@function _im-to-em($breakpoints, $base-value: 16px) {
-  $new-breakpoints: ();
-
-  @each $name, $value in $breakpoints {
-    $em-value: ($value / $base-value) * 1em;
-    $new-breakpoints: map-merge($new-breakpoints, ($name: $em-value));
-  }
-
-  @return $new-breakpoints;
-}
-
-/// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-$breakpoints: _im-to-em(
-  (
-    '4col': 320px,
-    '5col': 480px,
-    '6col': 640px,
-    '7col': 800px,
-    '8col': 960px,
-    '9col': 1120px,
-    '10col': 1280px,
-    '11col': 1440px,
-    '12col': 1600px,
-    '13col': 1760px,
-    '14col': 1920px,
-    '15col': 2080px,
-    '16col': 2240px,
-    '17col': 2400px,
-  )
-) !default;
-$toggle-breakpoints: (
-  'toggle-table-layout': 48em,
-  'toggle-menu': 64em,
-);
-$breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 
 /// Container's maximum width
 /// @type number
 $max-width: 73.75em !default; // 1180px
-$max-width--narrow: 41.75em;
+$max-width--narrow: 42.75em; // 668 px
+
+$_mobile-columns: 4;
+$_new-width: 0;
+$_device-width: 20em;
+$_i: $_mobile-columns;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  '#{$_mobile-columns}col': $_device-width,
+);
+
+@while $_device-width <= $max-width {
+  $_device-width: $_device-width / $_i * ($_i + 1);
+  $_i: $_i + 1;
+  $breakpoints: map-merge($breakpoints, ('#{$_i}col': $_device-width));
+}
+
+$toggle-breakpoints: (
+  'toggle-table-layout': map-get($breakpoints, '12col'),
+  'toggle-menu': 64em,
+);
+$breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 
 /// Z-indexes map, gathering all Z layers of the application. Avoid to edit it.
 /// @access public
