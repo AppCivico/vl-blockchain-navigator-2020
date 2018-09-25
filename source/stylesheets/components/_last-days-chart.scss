@@ -1,0 +1,66 @@
+.last-days-chart {
+}
+
+.chart-wrapper {
+  @include aspect-ratio(4 x 3);
+
+  background: $placeholder-bg;
+}
+
+.last-days-chart figcaption {
+}
+
+.last-days-chart dl {
+  display: table;
+
+  width: 100%;
+
+  margin-top: $leading * 2rem;
+  margin-bottom: $leading * 1rem;
+
+  border-collapse: collapse;
+}
+
+.last-days-chart dl div {
+  display: table-cell;
+
+  padding-right: $gutter * 0.5;
+  padding-left: $gutter * 0.5;
+  margin-bottom: $leading * 1rem;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.last-days-chart dt {
+  margin-bottom: $leading * 1rem;
+
+  font-weight: font-weight('bold');
+  font-size: ms(1);
+  line-height: inherit;
+}
+
+.last-days-chart dd {
+  margin: 0;
+
+  font-weight: font-weight('heading');
+  font-size: ms(4);
+
+  color: palette('green', 'light');
+
+  @media screen and (min-widdth: breakpoint('6col')) {
+    font-size: ms(6);
+  }
+}
+
+.last-days-chart dd + dd {
+  font-weight: font-weight('text');
+  font-size: ms(1);
+
+  color: palette('gray');
+}
