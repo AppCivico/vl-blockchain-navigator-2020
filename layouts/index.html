@@ -9,21 +9,23 @@
   {{ if or .Content .Title }}
     <article class="intro" id="intro">
       <div class="container">
-        {{ if .Title }}
-          {{ with $.Site.Params.credits }}
-            <h2>
-              {{ . }}
-            </h2>
+        <section class="wrap-content">
+          {{ if .Title }}
+            {{ with $.Site.Params.credits }}
+              <h2>
+                {{ . }}
+              </h2>
+            {{ end }}
+            <h1>
+              {{ .Title }}
+            </h1>
           {{ end }}
-          <h1>
-            {{ .Title }}
-          </h1>
-        {{ end }}
 
-        {{ .Content }}
+          {{ .Content }}
+        </section>
 
-        <figure>
-          <div class="ct-chart" id="current-time-chart"></div>
+        <figure class="last-days-chart">
+          <div id="current-time-chart" class="chart-wrapper"></div>
           <figcaption>
             <dl>
               <div>
