@@ -18,6 +18,10 @@
   translation: "Hash"
 - id: last7DaysAmount
   translation: "Valor nos últimos 7 dias"
+- id: mediaClipping
+  translation: "Na mídia"
+- id: partners
+  translation: "Parceiros"
 - id: payment
   translation: "Pagamento"
 - id: receipts
