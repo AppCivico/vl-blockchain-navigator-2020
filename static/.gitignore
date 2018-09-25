@@ -2,3 +2,7 @@
 *
 # Except this file
 !.gitignore
+
+# Netlify headers and redirects
+!_redirects
+!_headers
