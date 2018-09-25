@@ -111,13 +111,13 @@ $time-width: 6rem;
 
   @media screen and (min-width: breakpoint('4col')) {
     background-image: linear-gradient(
-    to right,
-    transparent 0%,
-    transparent calc(#{$time-width} + #{$gutter * 0.5} - #{$stroke * 0.5}),
-    $stroke-color calc(#{$time-width} + #{$gutter * 0.5} - #{$stroke * 0.5}),
-    $stroke-color calc(#{$time-width} + #{$gutter * 0.5} + #{$stroke * 0.5}),
-    transparent calc(#{$time-width} + #{$gutter * 0.5} + #{$stroke * 0.5}),
-    transparent 100%
+      to right,
+      transparent 0%,
+      transparent calc(#{$time-width} + #{$gutter * 0.5} - #{$stroke * 0.5}),
+      $stroke-color calc(#{$time-width} + #{$gutter * 0.5} - #{$stroke * 0.5}),
+      $stroke-color calc(#{$time-width} + #{$gutter * 0.5} + #{$stroke * 0.5}),
+      transparent calc(#{$time-width} + #{$gutter * 0.5} + #{$stroke * 0.5}),
+      transparent 100%
     );
   }
 }

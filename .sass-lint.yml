@@ -13,8 +13,8 @@
 files:
   include: '**/*.s+(a|c)ss'
   ignore:
-    - '_source/stylesheets/vendor/**/*.scss'
-    - '_source/stylesheets/tests/**/*.scss'
+    - './source/stylesheets/vendor/**/*.scss'
+    - './source/stylesheets/tests/**/*.scss'
 options:
   formatter: stylish
   merge-default-rules: false
@@ -503,5 +503,5 @@ rules:
   variable-name-format:
     - 1
     - allow-leading-underscore: true
-      convention: hyphenatedlowercase
+      convention: hyphenatedbem
   zero-unit: 1

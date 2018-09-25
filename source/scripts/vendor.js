@@ -1,3 +1,3 @@
 const Chartist = require('chartist');
 
-window.vendor = {Chartist};
+window.vendor = { Chartist };
