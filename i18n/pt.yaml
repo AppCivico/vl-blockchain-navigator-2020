@@ -1,0 +1,34 @@
+- id: amount
+  translation: "Valor"
+- id: block
+  translation: "Bloco"
+- id: candidate
+  translation: "Candidato"
+- id: cpf
+  translation: "CPF"
+- id: date
+  translation: "Data"
+- id: dateOrHash
+  translation: "Data ou hash"
+- id: dateTime
+  translation: "Data/hora"
+- id: donor
+  translation: "Doador"
+- id: hash
+  translation: "Hash"
+- id: last7DaysAmount
+  translation: "Valor nos últimos 7 dias"
+- id: payment
+  translation: "Pagamento"
+- id: receipts
+  translation: "Recibos"
+- id: results
+  translation: "Resultados"
+- id: time
+  translation: "Hora"
+- id: totalAmount
+  translation: "Valor total"
+- id: totalReceipts
+  translation: "Número de recibos"
+- id: transactionId
+  translation: "Transaction ID"
