@@ -1,3 +1,5 @@
+@charset 'utf-8';
+
 /**
  * 1. Add text decoration inheritance in all browsers (opinionated).
  * 2. Add vertical alignment inheritence in all browsers (opinionated).
@@ -39,6 +41,9 @@ h6,
 legend,
 caption,
 details > summary {
+  margin-top: $leading * 1rem;
+  margin-bottom: $leading * 1rem;
+
   font-weight: font-weight('heading');
   line-height: 1;
   font-family: $title-font-stack;
@@ -71,35 +76,37 @@ dt a {
 }
 
 h1 {
-  font-size: ms(10);
+  margin-top: 0;
+
+  font-size: ms(6);
+
+  @media screen and (min-width: breakpoint('6col')) {
+    font-size: ms(10);
+  }
 }
 
-h2 {
-  font-size: ms(6);
+h2,
+legend {
+  font-size: ms(4);
+
+  @media screen and (min-width: breakpoint('6col')) {
+    font-size: ms(6);
+  }
 }
 
 h3 {
-
 }
 
 h4 {
-
 }
 
 h5 {
-
 }
 
 h6 {
-
-}
-
-legend {
-
 }
 
 caption {
-
 }
 
 table {
@@ -214,6 +221,7 @@ b,
 strong {
   font-weight: font-weight('bold'); /* 2 */
 }
+
 // sass-lint:enable no-mergeable-selectors
 
 em,
@@ -273,7 +281,6 @@ time {
     cursor: help;
   }
 }
-
 
 /* codes
 ============================================================================ */
@@ -415,11 +422,9 @@ blockquote {
 
 blockquote > p {
   &::before {
-
   }
 
   &:last-of-type::after {
-
   }
 }
 
@@ -454,11 +459,13 @@ blockquote li {
   font-size: 1em;
 }
 
-blockquote.verse { // sass-lint:disable-line no-qualifying-elements
+blockquote.verse {
+  // sass-lint:disable-line no-qualifying-elements
   text-align: center;
 }
 
-blockquote.verse p { // sass-lint:disable-line no-qualifying-elements
+blockquote.verse p {
+  // sass-lint:disable-line no-qualifying-elements
   display: inline-block;
 
   width: auto;
