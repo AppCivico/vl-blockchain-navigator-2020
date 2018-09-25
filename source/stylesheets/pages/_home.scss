@@ -1,3 +1,75 @@
-// -----------------------------------------------------------------------------
-// This file contains styles that are specific to the home page.
-// -----------------------------------------------------------------------------
+.intro h2 {
+  font-size: ms(-2);
+
+  color: inherit;
+}
+
+.intro figure {
+  margin: 0;
+}
+
+.intro .container {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.intro .container > * {
+  @media screen and (min-width: breakpoint('8col')) {
+    flex-basis: 50%;
+    flex-grow: 1;
+
+    &:nth-child(odd) {
+      padding-right: $gutter * 0.5;
+    }
+
+    &:nth-child(even) {
+      padding-left: $gutter * 0.5;
+    }
+  }
+}
+
+.faq {
+  color: palette('text', 'light');
+
+  background-color: palette('petrol', 'dark');
+}
+
+.faq h1 {
+  color: inherit;
+}
+
+.media-clipping,
+.partners {
+  text-align: center;
+}
+
+.media-clipping {
+  background-color: palette('gray', 'x-light');
+}
+
+.media-clipping ul,
+.partners ul {
+  display: flex;
+
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding-top: $leading * 2rem;
+  padding-bottom: $leading * 2rem;
+}
+
+.media-clipping li,
+.partners li {
+  display: inline-block;
+
+  padding-right: ($gutter / 2);
+  padding-left: ($gutter / 2);
+  margin-bottom: $leading * 1em;
+
+  &::before {
+    content: none;
+  }
+}
