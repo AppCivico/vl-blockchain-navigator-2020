@@ -242,10 +242,10 @@ $gutter: $leading * $body-font-size / 1em * 1rem;
 
 /// Container's maximum width
 /// @type number
-$max-width: 73.75em !default; // 1180px
-$max-width--narrow: 42.75em; // 668 px
+$max-width: 80em !default; // 1180px
+$max-width--narrow: 40.75em; // 668 px
 
-$_mobile-columns: 4;
+$_mobile-columns: 3;
 $_new-width: 0;
 $_device-width: 20em;
 $_i: $_mobile-columns;

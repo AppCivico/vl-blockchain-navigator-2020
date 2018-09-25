@@ -92,7 +92,7 @@ textarea {
 /// </html>
 ///
 .grid {
-  $n: 3;
+  $n: $_mobile-columns - 1;
 
   &::after,
   &:root::before {
@@ -132,7 +132,7 @@ textarea {
   @each $key, $value in $breakpoints {
     $n: $n + 1;
 
-    @if $value <= $max-width and map-get($toggle-breakpoints, $key) == null {
+    @if map-get($toggle-breakpoints, $key) == null {
       @media screen and (min-width: breakpoint($key)) {
         &::after {
           background-image: grid-image($n);
