@@ -197,33 +197,6 @@ $palette: (
   )
 );
 
-/// Gradient steps
-/// @type list
-$gradient-steps: rgb(30, 136, 229),
-rgb(25, 118, 210),
-rgb(21, 101, 192),
-rgb(13, 71, 161),
-rgb(3, 155, 229),
-rgb(2, 136, 209),
-rgb(2, 119, 189),
-rgb(1, 87, 155),
-rgb(0, 172, 193),
-rgb(0, 151, 167),
-rgb(0, 131, 143),
-rgb(0, 96, 100),
-rgb(0, 137, 123),
-rgb(0, 121, 107),
-rgb(0, 105, 92),
-rgb(0, 77, 64),
-rgb(67, 160, 71),
-rgb(56, 142, 60),
-rgb(46, 125, 50),
-rgb(27, 94, 32),
-rgb(124, 179, 66),
-rgb(104, 159, 56),
-rgb(85, 139, 47),
-rgb(51, 105, 30);
-
 /// Default border-radius
 /// @todo Customize it to match your design.
 /// @type number
