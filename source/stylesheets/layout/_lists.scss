@@ -5,8 +5,6 @@
  */
 ul,
 ol {
-  @include fallback('margin', 0 0 1.5rem);
-
   padding-left: 1em;
   margin: 0;
 }
@@ -35,10 +33,6 @@ article li {
     z-index: layer('default'); // required to prevent Blink clipping issues on columns
 
     font-weight: bold;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
   }
 }
 
