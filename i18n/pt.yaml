@@ -26,6 +26,8 @@
   translation: "Parceiros"
 - id: payment
   translation: "Pagamento"
+- id: receipt
+  translation: "Recibo"
 - id: receipts
   translation: "Recibos"
 - id: results
