@@ -107,7 +107,7 @@ tbody td {
 
     &[title] {
       &::before {
-        float: left;
+        display: inline;
 
         font-weight: font-weight('bold');
 

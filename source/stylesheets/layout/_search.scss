@@ -131,6 +131,8 @@ $time-width: 6rem;
 }
 
 .search__results h2 {
+  @extend %h1;
+
   margin-bottom: $leading * 1rem;
 
   color: text-contrast(palette('white'), palette('petrol'));
