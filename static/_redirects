@@ -8,4 +8,4 @@ http://compassionate-wilson-441664.netlify.com/* http://blockchain.votolegal.com
 http://blockchain.votolegal.com.br/* https://blockchain.votolegal.com.br/:splat 301!
 
 # Proxy API
-/public-api/* https://dapi.votolegal.com.br/public-api/:splat 200
+/public-api/* https://api.votolegal.com.br/public-api/:splat 200
