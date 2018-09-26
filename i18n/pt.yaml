@@ -27,9 +27,9 @@
 - id: payment
   translation: "Pagamento"
 - id: receipt
-  translation: "Recibo"
-- id: receipts
-  translation: "Recibos"
+  translation:
+    one: "Recibo"
+    other: "Recibos"
 - id: results
   translation: "Resultados"
 - id: subscribe
