@@ -205,16 +205,13 @@ $time-width: 6rem;
 }
 
 .search-result {
-  margin-bottom: $leading * 2rem;
-
-  font-size: ms(-2);
+  margin-bottom: $leading * 4rem;
 }
 
 .search-result code {
-  display: block;
+  display: inline-block;
 
-  width: 3em;
-  min-width: 100%;
+  padding: $gutter * 0.25 $gutter * 0.25 $gutter * 0.25 $gutter * 0.5;
 
   overflow: hidden;
 
@@ -224,8 +221,11 @@ $time-width: 6rem;
 
   border-radius: $rounded-corner;
 
-  @media screen and (min-width: breakpoint('6col')) {
-    padding: $gutter * 0.25 $gutter * 0.25 $gutter * 0.25 $gutter * 0.5;
+  @media screen and (min-width: breakpoint('toggle-table-layout')) {
+    display: block;
+
+    width: 3em;
+    min-width: 100%;
   }
 }
 
@@ -263,7 +263,9 @@ $time-width: 6rem;
   @media screen and (min-width: breakpoint('6col')) {
     flex-grow: 1;
 
+    margin-top: $leading * 1rem;
     margin-right: $gutter * 0.5;
+    margin-bottom: $leading * 1rem;
     margin-left: $gutter * 0.5;
   }
 }
@@ -282,11 +284,11 @@ $time-width: 6rem;
 }
 
 .search-result__metadata dt {
-  // font-size: ms(-2);
+  font-size: ms(-2);
 }
 
 .search-result__metadata dd {
-  font-size: ms(1);
+  font-size: ms(0);
 }
 
 .search-result__metadata time {
@@ -306,23 +308,27 @@ $time-width: 6rem;
   margin-right: $stroke * 0.5;
 }
 
-.search-result__total-receitps,
+.search-result__total-receitps {
+  @media screen and (min-width: breakpoint('6col')) {
+    flex-basis: calc(35% - #{$gutter});
+  }
+}
+
+.search-result__total-amount {
+  @media screen and (min-width: breakpoint('6col')) {
+    flex-basis: calc(65% - #{$gutter});
+  }
+}
+
 .search-result__block {
   @media screen and (min-width: breakpoint('6col')) {
     flex-basis: calc(25% - #{$gutter});
   }
 }
 
-.search-result__total-amount,
 .search-result__hash {
   @media screen and (min-width: breakpoint('6col')) {
     flex-basis: calc(75% - #{$gutter});
-  }
-}
-
-.search-result__total-amount {
-  @media screen and (min-width: breakpoint('6col')) {
-    // padding-right: $gutter;
   }
 }
 
@@ -344,7 +350,10 @@ $time-width: 6rem;
 .search-result__total-receitps dt,
 .search-result__total-amount dt {
   @media screen and (min-width: breakpoint('6col')) {
-    font-weight: inherit;
+    font-weight: font-weight('text');
+    font-size: ms(-1);
+
+    white-space: nowrap;
   }
 }
 
@@ -374,11 +383,17 @@ $time-width: 6rem;
 
 .search-result__block dt,
 .search-result__hash dt {
-  flex-grow: 1;
+  @extend %gradient-steps;
+
+  width: 5em;
 
   margin-right: $gutter;
 
   line-height: inherit;
+
+  @media screen and (min-width: breakpoint('6col')) {
+    font-size: ms(0);
+  }
 }
 
 .search-result__block dd,
@@ -394,6 +409,10 @@ $time-width: 6rem;
   min-width: auto;
 
   padding: ($leading * 0.5rem) $gutter;
+
+  font-weight: font-weight('text');
+
+  color: palette('gray', 'dark');
 
   box-shadow: 0 0 6px 0 palette('shadow');
 }
@@ -516,6 +535,8 @@ $time-width: 6rem;
   text-align: center;
 
   @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
+    display: inline;
+
     text-align: left;
   }
 }
