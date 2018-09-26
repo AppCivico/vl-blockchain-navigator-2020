@@ -280,6 +280,8 @@ $time-width: 6rem;
 }
 
 .search-result__metadata dl {
+  overflow: hidden;
+
   @media screen and (min-width: breakpoint('6col')) {
     display: flex;
 
@@ -291,6 +293,8 @@ $time-width: 6rem;
 }
 
 .search-result__metadata div {
+  max-width: 100%;
+
   margin-bottom: $leading * 0.5rem;
 
   @media screen and (min-width: breakpoint('6col')) {
@@ -350,13 +354,13 @@ $time-width: 6rem;
 
 .search-result__total-receitps {
   @media screen and (min-width: breakpoint('6col')) {
-    flex-basis: calc(35% - #{$gutter});
+    flex-basis: calc(45% - #{$gutter});
   }
 }
 
 .search-result__total-amount {
   @media screen and (min-width: breakpoint('6col')) {
-    flex-basis: calc(65% - #{$gutter});
+    flex-basis: calc(55% - #{$gutter});
   }
 }
 
