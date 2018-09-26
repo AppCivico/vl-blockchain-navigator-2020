@@ -11,29 +11,33 @@
 }
 
 .last-days-chart dl {
-  display: table;
+  @media screen and (min-widdth: breakpoint('6col')) {
+    display: table;
 
-  width: 100%;
+    width: 100%;
 
-  margin-top: $leading * 2rem;
-  margin-bottom: $leading * 1rem;
+    margin-top: $leading * 2rem;
+    margin-bottom: $leading * 1rem;
 
-  border-collapse: collapse;
+    border-collapse: collapse;
+  }
 }
 
 .last-days-chart dl div {
-  display: table-cell;
+  @media screen and (min-widdth: breakpoint('6col')) {
+    display: table-cell;
 
-  padding-right: $gutter * 0.5;
-  padding-left: $gutter * 0.5;
-  margin-bottom: $leading * 1rem;
+    padding-right: $gutter * 0.5;
+    padding-left: $gutter * 0.5;
+    margin-bottom: $leading * 1rem;
 
-  &:first-child {
-    padding-left: 0;
-  }
+    &:first-child {
+      padding-left: 0;
+    }
 
-  &:last-child {
-    padding-right: 0;
+    &:last-child {
+      padding-right: 0;
+    }
   }
 }
 
@@ -50,6 +54,8 @@
 
   font-weight: font-weight('heading');
   font-size: ms(4);
+
+  word-wrap: break-word;
 
   color: palette('green', 'light');
 
