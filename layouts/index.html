@@ -24,19 +24,19 @@
           {{ .Content }}
         </section>
 
-        <figure class="last-days-chart">
+        <figure class="last-days-chart" id="lastDaysChart" aria-busy="true" hidden>
           <div id="current-time-chart" class="chart-wrapper"></div>
           <figcaption>
             <dl>
               <div>
                 <dt>{{ i18n "totalAmount" }}</dt>
-                <dd>R$100.000.000</dd>
-                <dd>em 500 doações</dd>
+                <dd id="totalAmount"></dd>
+                <dd>em <span id="totalAmountDonations"></span> doações</dd>
               </div>
               <div>
                 <dt>{{ i18n "last7DaysAmount" }}</dt>
-                <dd>R$3.000.000</dd>
-                <dd>em 50 doações</dd>
+                <dd id="last7DaysAmount"></dd>
+                <dd>em <span id="last7DaysAmountDonations"></span> doações</dd>
               </div>
             </dl>
           </figcaption>

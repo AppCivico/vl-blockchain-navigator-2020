@@ -12,6 +12,14 @@ export default function initGraph() {
     cache: 'no-cache',
   };
 
+  const totalAmountEl = document.querySelector('#totalAmount');
+  const last7DaysAmountEl = document.querySelector('#last7DaysAmount');
+  const totalAmountDonationsEl = document.querySelector('#totalAmountDonations');
+  const last7DaysAmountDonationsEl = document.querySelector('#last7DaysAmountDonations');
+  const lastDaysChartEl = document.querySelector('#lastDaysChart');
+
+  lastDaysChartEl.removeAttribute('hidden');
+
   const requestURI = config.api.domain
     ? `https://${config.api.domain}${config.api.pathname}`
     : config.api.pathname;
@@ -46,6 +54,24 @@ export default function initGraph() {
         maintainAspectRatio: false,
       };
 
+      if (totalAmountEl) {
+        totalAmountEl.textContent = response.ui.total_donations_amount;
+      }
+
+      if (last7DaysAmountEl) {
+        last7DaysAmountEl.textContent = response.ui.last_seven_days_amount;
+      }
+
+      if (totalAmountDonationsEl) {
+        totalAmountDonationsEl.textContent = response.ui.total_donations_count;
+      }
+
+      if (last7DaysAmountDonationsEl) {
+        last7DaysAmountDonationsEl.textContent = response.ui.last_seven_days_count;
+      }
+
       window.vendor.Chartist.Line('#current-time-chart', data, chartOptions, chartResponsiveOptions);
+
+      lastDaysChartEl.setAttribute('aria-busy', false);
     });
 }
