@@ -1,6 +1,6 @@
 export default {
   api: {
-    domain: 'api.votolegal.com.br',
+    domain: (window.location.hostname.indexOf('blockchain.votolegal.com.br') !== -1 ? '' : 'api.votolegal.com.br'),
     pathname: '/public-api/blockchain',
   },
 };
