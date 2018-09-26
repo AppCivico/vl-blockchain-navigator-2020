@@ -8,8 +8,6 @@ td {
   width: auto;
   height: auto;
 
-  font-size: 1em;
-
   vertical-align: top;
 
   background-color: transparent;
@@ -27,17 +25,11 @@ table {
   margin-bottom: #{$leading * 1em} ;
   margin-left: 0;
 
-  font-size: 100%;
   font-family: inherit;
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'pnum' 0, 'tnum' 1, 'onum' 0, 'lnum' 1, 'dlig' 0;
 
   border-collapse: collapse;
   empty-cells: show;
-}
-
-table p,
-table li {
-  font-size: 1em;
 }
 
 caption {

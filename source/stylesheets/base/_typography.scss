@@ -118,6 +118,20 @@ table {
   letter-spacing: -0.025em;
 }
 
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td {
+  font-size: 1em;
+}
+
+table p,
+table li {
+  font-size: 1em;
+}
+
 dt {
 }
 
