@@ -12,7 +12,11 @@ export default function initGraph() {
     cache: 'no-cache',
   };
 
-  const requestData = new Request(`https://${config.api.domain}${config.api.pathname}`);
+  const requestURI = config.api.domain
+    ? `https://${config.api.domain}${config.api.pathname}`
+    : config.api.pathname;
+
+  const requestData = new Request(requestURI);
 
   fetch(requestData, requestOptions)
     .then((response) => {
