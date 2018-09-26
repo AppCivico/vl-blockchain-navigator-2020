@@ -126,7 +126,9 @@ $time-width: 6rem;
   margin-bottom: $leading * 3rem;
 
   @media screen and (min-width: breakpoint('4col')) {
-    padding-left: calc(#{$time-width} + #{$gutter * 1.5});
+    position: relative;
+
+    padding-left: calc(#{$time-width} + #{$gutter});
   }
 }
 
@@ -138,25 +140,54 @@ $time-width: 6rem;
   color: text-contrast(palette('white'), palette('petrol'));
 }
 
-.search__results header time {
-  font-style: normal;
-  font-weight: font-weight('text');
-
-  color: text-contrast(palette('white'), palette('petrol'));
-
-  @media screen and (min-width: breakpoint('6col')) {
-    font-weight: font-weight('bold');
-  }
-}
-
 .search__results header p {
   margin-bottom: 0;
 
   font-weight: font-weight('bold');
   font-size: ms(-2);
 
+  @media screen and (min-width: breakpoint('4col')) {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: $time-width;
+  }
+
   @media screen and (min-width: breakpoint('6col')) {
     font-weight: font-weight('text');
+  }
+}
+
+.search__results header time {
+  font-style: normal;
+  font-weight: font-weight('text');
+
+  color: text-contrast(palette('white'), palette('petrol'));
+
+  @media screen and (min-width: breakpoint('4col')) {
+    &::before {
+      display: block;
+
+      content: '';
+    }
+  }
+
+  @media screen and (min-width: breakpoint('6col')) {
+    font-weight: font-weight('bold');
+  }
+}
+
+.search__results header svg {
+  display: none;
+
+  @media screen and (min-width: breakpoint('4col')) {
+    position: relative;
+    left: $stroke * -1;
+
+    float: right;
+
+    display: block;
   }
 }
 
@@ -210,6 +241,8 @@ $time-width: 6rem;
 
 .search-result code {
   display: inline-block;
+
+  max-width: 100%;
 
   padding: $gutter * 0.25 $gutter * 0.25 $gutter * 0.25 $gutter * 0.5;
 
@@ -305,11 +338,13 @@ $time-width: 6rem;
 .search-result__time svg {
   display: none;
 
-  @media screen and (min-width: breakpoint('6col')) {
+  @media screen and (min-width: breakpoint('4col')) {
     position: relative;
     left: $stroke * -1;
 
     float: right;
+
+    display: block;
   }
 }
 
@@ -342,7 +377,7 @@ $time-width: 6rem;
 
   display: none;
 
-  @media screen and (min-width: breakpoint('6col')) {
+  @media screen and (min-width: breakpoint('4col')) {
     float: left;
 
     display: block;
@@ -411,7 +446,6 @@ $time-width: 6rem;
   display: inline-block;
 
   width: auto;
-  max-width: 100%;
   min-width: auto;
 
   padding: ($leading * 0.5rem) $gutter;
