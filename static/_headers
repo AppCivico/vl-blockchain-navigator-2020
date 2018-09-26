@@ -1,6 +1,6 @@
 /*
   # Only connect to this site and subdomains via HTTPS for the next one year
-#  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
 
   # Block site from being framed with X-Frame-Options and CSP
   Content-Security-Policy: frame-ancestors 'none'
