@@ -14,6 +14,8 @@
   translation: "Data/hora"
 - id: donor
   translation: "Doador"
+- id: email
+  translation: "E-mail"
 - id: hash
   translation: "Hash"
 - id: last7DaysAmount
@@ -28,6 +30,8 @@
   translation: "Recibos"
 - id: results
   translation: "Resultados"
+- id: subscribe
+  translation: "Inscrever"
 - id: time
   translation: "Hora"
 - id: totalAmount
