@@ -11,7 +11,7 @@
 }
 
 .last-days-chart dl {
-  @media screen and (min-widdth: breakpoint('6col')) {
+  @media screen and (min-width: breakpoint('6col')) {
     display: table;
 
     width: 100%;
@@ -24,7 +24,7 @@
 }
 
 .last-days-chart dl div {
-  @media screen and (min-widdth: breakpoint('6col')) {
+  @media screen and (min-width: breakpoint('6col')) {
     display: table-cell;
 
     padding-right: $gutter * 0.5;
@@ -59,7 +59,7 @@
 
   color: palette('green', 'light');
 
-  @media screen and (min-widdth: breakpoint('6col')) {
+  @media screen and (min-width: breakpoint('6col')) {
     font-size: ms(6);
   }
 }
