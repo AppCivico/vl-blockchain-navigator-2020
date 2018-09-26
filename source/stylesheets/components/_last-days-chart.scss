@@ -24,12 +24,13 @@
 }
 
 .last-days-chart dl div {
+  margin-bottom: $leading * 1rem;
+
   @media screen and (min-width: breakpoint('6col')) {
     display: table-cell;
 
     padding-right: $gutter * 0.5;
     padding-left: $gutter * 0.5;
-    margin-bottom: $leading * 1rem;
 
     &:first-child {
       padding-left: 0;
@@ -42,11 +43,13 @@
 }
 
 .last-days-chart dt {
-  margin-bottom: $leading * 1rem;
-
   font-weight: font-weight('bold');
   font-size: ms(1);
   line-height: inherit;
+
+  @media screen and (min-width: breakpoint('6col')) {
+    margin-bottom: $leading * 1rem;
+  }
 }
 
 .last-days-chart dd {
