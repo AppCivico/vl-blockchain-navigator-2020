@@ -80,3 +80,18 @@
   Cache-Control: max-age=31536000, public
 /*.js
   Cache-Control: max-age=31536000, public
+
+
+# WebFonts
+/*.ttf
+  Cache-Control: max-age=2592000, public
+/*.ttc
+  Cache-Control: max-age=2592000, public
+/*.otf
+  Cache-Control: max-age=2592000, public
+/*.eot
+  Cache-Control: max-age=2592000, public
+/*.woff
+  Cache-Control: max-age=2592000, public
+/*.woff2
+  Cache-Control: max-age=2592000, public
