@@ -303,9 +303,14 @@ $time-width: 6rem;
 }
 
 .search-result__time svg {
-  float: right;
+  display: none;
 
-  margin-right: $stroke * 0.5;
+  @media screen and (min-width: breakpoint('6col')) {
+    position: relative;
+    left: $stroke * -1;
+
+    float: right;
+  }
 }
 
 .search-result__total-receitps {
@@ -406,6 +411,7 @@ $time-width: 6rem;
   display: inline-block;
 
   width: auto;
+  max-width: 100%;
   min-width: auto;
 
   padding: ($leading * 0.5rem) $gutter;
