@@ -2,9 +2,7 @@
 }
 
 .chart-wrapper {
-  @include aspect-ratio(4 x 3);
-
-  background: $placeholder-bg;
+  position: relative; // required by Chartist
 }
 
 .last-days-chart figcaption {
