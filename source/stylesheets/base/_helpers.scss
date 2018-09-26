@@ -1,25 +1,37 @@
 %loading-bg {
-  background-image: url('#{$base-url}loading.svg');
+  background-image: image('loading.svg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-color: palette('loading', 'background');
 }
 
 %loading-el {
-  overflow: hidden;
-
   cursor: wait;
 
   &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    @extend %loading-bg;
 
+    position: absolute;
+    top: $gutter * -0.5;
+    right: $gutter * -0.5;
+    bottom: $gutter * -0.5;
+    left: $gutter * -0.5;
+
+    display: flex;
     z-index: layer('modal');
 
-    content: '';
+    align-items: center;
+    justify-content: center;
+
+    padding: $gutter;
+
+    text-align: center;
+
+    color: palette('loading', 'foreground');
+
+    border-radius: $rounded-corner;
+
+    content: attr(data-aria-busy-message) '';
   }
 }
 
@@ -49,8 +61,9 @@
 [aria-busy='true'] {
   > body,
   &:not(html) {
-    @extend %loading-bg;
     @extend %loading-el;
+
+    position: relative;
   }
 }
 

@@ -190,8 +190,8 @@ $palette: (
     'background': hsl(0, 0%, 94%),
   ),
   'loading': (
-    'foreground': hsl(0, 0%, 94%),
-    'background': hsla(0, 0%, 7%, 0.8),
+    'foreground': $green--x-light,
+    'background': rgba($green--x-dark, 0.35),
   ),
   'label': (
     'default': rgb(119, 119, 119),
