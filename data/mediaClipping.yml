@@ -1,67 +1,67 @@
 list:
   - alt: ""
     link: "https://www.youtube.com/watch?v=49J9g5gCcWM"
-    logotype: ""
+    logotype: "/images/logo-TEDx-branco.png"
     name: TEDx
     slug: tedx
     weight: 0
   - alt: ""
     link: "https://brasil.elpais.com/brasil/2016/07/08/politica/1468011468_841041.html"
-    logotype: ""
+    logotype: "/images/logo-elpais-branco.png"
     name: El País
     slug: el-pais
     weight: 0
   - alt: ""
     link: "http://cbn.globoradio.globo.com/sao-paulo/2016/09/23/NA-RETA-FINAL-DIVERSOS-SITES-E-APLICATIVOS-AJUDAM-O-ELEITOR-A-DEFINIR-O-VOTO.htm"
-    logotype: ""
+    logotype: "/images/logo-cbn-branco.png"
     name: CBN
     slug: cbn
     weight: 0
   - alt: ""
     link: "http://politica.estadao.com.br/noticias/geral,iniciativas-querem-estimular-doacoes-de-pessoa-fisica,10000053676"
-    logotype: ""
+    logotype: "/images/logo-estadao-branco.png"
     name: Estadão
     slug: estadao
     weight: 0
   - alt: ""
     link: "http://g1.globo.com/jornal-nacional/noticia/2016/08/eleicoes-de-2016-tem-novidade-empresas-nao-podem-fazer-doacoes.html"
-    logotype: ""
+    logotype: "/images/logo-jn-branco.png"
     name: Jornal Nacional
     slug: jornal-nacional
     weight: 0
   - alt: ""
     link: "http://www1.folha.uol.com.br/tec/2016/06/1783365-por-transparencia-grupo-quer-usar-tecnologia-do-bitcoin-em-eleicoes-de-sp.shtml"
-    logotype: ""
+    logotype: "/images/logo-folha-branco.png"
     name: Folha de São Paulo
     slug: folha-sp
     weight: 0
   - alt: ""
     link: "https://super.abril.com.br/ideias/quem-e-que-paga-a-politica"
-    logotype: ""
+    logotype: "/images/logo-superinteressante-branco.png"
     name: Super Interessante
     slug: super-interessante
     weight: 0
   - alt: ""
     link: "https://www.nexojornal.com.br/ensaio/2016/Elei%C3%A7%C3%B5es-e-a-oportunidade-de-um-maior-engajamento-dos-cidad%C3%A3os-com-seus-representantes"
-    logotype: ""
+    logotype: "/images/logo-nexo-branco.png"
     name: Nexo
     slug: nexo
     weight: 0
   - alt: ""
     link: "https://br.noticias.yahoo.com/doacoes-de-marina-silva-serao-registradas-em-blockchain-entenda-145118346.html"
-    logotype: ""
+    logotype: "/images/yahoo.png"
     name: Yahoo
     slug: yahoo
     weight: 0
   - alt: ""
     link: "https://portaldobitcoin.com/marina-silva-usa-blockchain-para-financiar-campanha-e-arrecada-r-100-mil-em-quatro-dias/"
-    logotype: ""
+    logotype: "/images/portal-bitcoin.png"
     name: Portal do Bitcoin
     slug: portal-bitcoin
     weight: 0
   - alt: ""
     link: "https://livecoins.com.br/marina-silva-utilizando-blockchain-da-decred-para-deixar-transparente-o-financiamento-coletivo-de-sua-campanha-eleitoral/"
-    logotype: ""
+    logotype: "/images/livecoins.png"
     name: Livecoins
     slug: livecoins
     weight: 0
