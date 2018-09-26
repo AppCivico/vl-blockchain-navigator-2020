@@ -67,9 +67,26 @@
 
   padding-right: ($gutter / 2);
   padding-left: ($gutter / 2);
-  margin-bottom: $leading * 1em;
+  margin-bottom: $leading * 1rem;
 
   &::before {
     content: none;
   }
+
+  @media screen and (min-width: breakpoint('6col')) {
+    padding-right: $gutter;
+    padding-left: $gutter;
+    margin-bottom: $leading * 2rem;
+  }
+
+  @media screen and (min-width: breakpoint('9col')) {
+    padding-right: $gutter * 2;
+    padding-left: $gutter * 2;
+    margin-bottom: $leading * 3rem;
+  }
+}
+
+.media-clipping a,
+.partners a {
+  display: block;
 }
