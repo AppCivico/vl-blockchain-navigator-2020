@@ -6,7 +6,7 @@
         {{ range . }}
           <li class="{{ .slug }}">
             <a href="{{ .link }}">
-              <img src="{{ (resources.Get (.logotype) | resources.Fingerprint).Permalink }}" alt="{{ .alt | default .name }}">
+              <img src="{{ (resources.Get (.logotype) | resources.Fingerprint).RelPermalink }}" alt="{{ .alt | default .name }}">
             </a>
           </li>
         {{ end }}
