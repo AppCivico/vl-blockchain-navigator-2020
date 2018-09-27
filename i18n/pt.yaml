@@ -4,6 +4,8 @@
   translation: "Bloco"
 - id: candidate
   translation: "Candidato"
+- id: content
+  translation: "Conteúdo"
 - id: cpf
   translation: "CPF"
 - id: date
@@ -16,12 +18,16 @@
   translation: "Doador"
 - id: email
   translation: "E-mail"
+- id: execute
+  translation: "Executar"
 - id: hash
   translation: "Hash"
 - id: last7DaysAmount
   translation: "Valor nos últimos 7 dias"
 - id: mediaClipping
   translation: "Na mídia"
+- id: menu
+  translation: "Menu"
 - id: partners
   translation: "Parceiros"
 - id: payment
