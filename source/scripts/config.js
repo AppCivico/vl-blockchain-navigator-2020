@@ -16,4 +16,5 @@ export default {
     domain: 'votolegal.com.br',
     pathname: '/recibo',
   },
+  searchKey: 'buscar',
 };

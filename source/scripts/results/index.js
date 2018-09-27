@@ -2,46 +2,60 @@ import config from '../config';
 
 export default {
   el: '#search-results-wrapper',
-  template: '#search-results',
+  template: '#search-form',
   name: 'search-results-wrapper',
   components: {
-    'search-result': {
-      template: '#search-result',
+    'search-results': {
+      template: '#search-results',
       props: {
-        donations: {
+        nodes: {
           type: Array,
           required: false,
         },
-        block: {
-          type: Number,
-          required: false,
-        },
-        hash: {
-          type: String,
-          required: false,
-        },
-        time: {
-          type: Date,
-          required: false,
+      },
+      computed: {
+        now() {
+          return new Date().toISOString();
         },
       },
       components: {
-        'block-detail': {
-          template: '#block-detail',
+        'search-result': {
+          template: '#search-result',
           props: {
-            donation: {
-              type: Object,
+            donations: {
+              type: Array,
+              required: false,
+            },
+            block: {
+              type: Number,
+              required: false,
+            },
+            hash: {
+              type: String,
+              required: false,
+            },
+            time: {
+              type: Date,
+              required: false,
+            },
+          },
+          components: {
+            'block-detail': {
+              template: '#block-detail',
+              props: {
+                donation: {
+                  type: Object,
+                },
+              },
             },
           },
         },
       },
     },
   },
-  // render(createElement) {
-  //   return createElement('search-results');
-  // },
   data() {
     return {
+      searchKey: '',
       loading: true,
       nodes: [],
       debug: true,
@@ -49,22 +63,21 @@ export default {
       xhr_request: [],
     };
   },
-  computed: {
-    now() {
-      return new Date().toISOString();
-    },
-  },
   created() {
   },
   mounted() {
+    const pathArray = window.location.pathname.split('/');
+    const lastURLSegment = pathArray[pathArray.length - 1];
+
+    if (lastURLSegment) {
+      this.searchKey = lastURLSegment;
+    }
+
     this.loadResults();
-    // this.showElement();
+    this.showElement();
   },
   methods: {
-    // totalAmount(items = []) {
-    //   return items.reduce((accumulator, currentValue) => accumulator + currentValue.amount, 0);
-    // },
-    loadResults(params = {}) {
+    loadResults() {
       const requestheaders = new Headers();
       requestheaders.append('Content-Type', 'application/json');
       requestheaders.append('pragma', 'no-cache');
@@ -80,7 +93,7 @@ export default {
         ? `https://${config.api.domain}${config.api.pathname}`
         : config.api.pathname;
 
-      const requestData = new Request(requestURI);
+      const requestData = new Request(`${requestURI}/${this.searchKey}`);
 
       fetch(requestData, requestOptions)
         .then((response) => {
@@ -91,8 +104,14 @@ export default {
           }
           throw new TypeError("Oops, we haven't got JSON!");
         }).then((response) => {
+          if (this.searchKey) {
+            window.history.pushState(
+              { searchKey: this.searchKey },
+              `Busca por ${this.searchKey}`,
+              `?${config.searchKey}=${this.searchKey}`,
+            );
+          }
           this.nodes = response.nodes;
-          // this.$data.nodes = response.nodes;
         });
     },
     cancelRequest() {

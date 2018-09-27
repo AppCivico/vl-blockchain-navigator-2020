@@ -1,44 +1,8 @@
 {{ with .Site.GetPage "/search" }}
-<article class="search">
-  <div class="container">
-    <form method="get"
-      name="search-form"
-      class="search__form">
-      <fieldset>
-        {{ with .Title }}
-          <legend>
-            {{ . }}
-          </legend>
-        {{ end }}
 
-        <p>
-          <label for="search-for">{{ i18n "dateOrHash" }}</label>
-          <input type="text" value="" name="search-for" id="search-for">
-        </p>
+<div id="search-results-wrapper"></div>
 
-        <!-- real people should not fill this in and expect good things -->
-        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-        <input type="text"
-        name="b_a6b37c4d9e8f27d3e4a8c3f2d6e3a2c9b1a7b3c6a67c2e4f1da5f9b4d7c2"
-        tabindex="-1" value="">
-        </div>
-
-        <button type="submit" name="subscribe">
-          {{ i18n "execute" }}
-        </button>
-      </fieldset>
-    </form>
-
-    {{ with .Content }}
-      <div class="search__helper">
-        {{ . }}
-      </div>
-    {{ end }}
-  </div>
-
-  <div id="search-results-wrapper"></div>
-</article>
-
+{{ partial "microtemplates/searchForm.html" . }}
 {{ partial "microtemplates/searchResult.html" . }}
 {{ partial "microtemplates/searchResults.html" . }}
 {{ partial "microtemplates/blockDetail.html" . }}
