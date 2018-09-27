@@ -38,7 +38,7 @@ export default {
     };
     const keys = Object.keys(mapaAcentosHex);
 
-    keys.map((item) => {
+    keys.map((item) => { // eslint-disable-line
       const expressaoRegular = mapaAcentosHex[item];
       newString = newString.replace(expressaoRegular, item);
     });
@@ -51,7 +51,7 @@ export default {
   },
 
   formatCPF(value) {
-    return String(value).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '\$1.\$2.\$3\-\$4');
+    return String(value).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4');
   },
 
   titleCase(str) {

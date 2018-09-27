@@ -478,13 +478,11 @@ blockquote li {
   font-size: 1em;
 }
 
-blockquote.verse {
-  // sass-lint:disable-line no-qualifying-elements
+blockquote.verse {// sass-lint:disable-line no-qualifying-elements
   text-align: center;
 }
 
-blockquote.verse p {
-  // sass-lint:disable-line no-qualifying-elements
+blockquote.verse p {// sass-lint:disable-line no-qualifying-elements
   display: inline-block;
 
   width: auto;
