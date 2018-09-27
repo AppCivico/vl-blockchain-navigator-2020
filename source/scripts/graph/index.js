@@ -1,3 +1,4 @@
+/* global Chartist */
 import config from '../config';
 
 export default function initGraph() {
@@ -70,7 +71,7 @@ export default function initGraph() {
         last7DaysAmountDonationsEl.textContent = response.ui.last_seven_days_count;
       }
 
-      window.vendor.Chartist.Line('#current-time-chart', data, chartOptions, chartResponsiveOptions);
+      Chartist.Line('#current-time-chart', data, chartOptions, chartResponsiveOptions);
 
       lastDaysChartEl.setAttribute('aria-busy', false);
     });
