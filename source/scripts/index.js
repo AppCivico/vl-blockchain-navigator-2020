@@ -1,9 +1,9 @@
 /* global Vue, dayjs */
 
+import config from './config';
+import utilities from './utilities';
 import initGraph from './graph';
 import vueResults from './results';
-import utilities from './utilities';
-import config from './config';
 
 utilities.formatDate = function formatDate(date, format = 'YYYY-MM-DDTHH:mm:ss.SSSZ') {
   return format !== 'YYYY-MM-DDTHH:mm:ss.SSSZ'
