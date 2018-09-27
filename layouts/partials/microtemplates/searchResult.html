@@ -1,131 +1,124 @@
-<details class="search-result">
-  <summary class="search-result__metadata">
-    <dl>
-      <div class="search-result__time">
-        <dt>
-          {{ i18n "time" }}:
-        </dt>
-        <dd>
-          <time datetime="2018-07-25T06:00">06:00</time>
+<script type="text/x-template" id="search-result">
+  <details class="search-result">
+    <summary class="search-result__metadata">
+      <dl>
+<div class="search-result__time" v-if="time">
+          <dt>
+            {{ i18n "time" }}:
+          </dt>
+          <dd>
+            <time :datetime="$options.filters.formatDate(time, 'YYYY-MM-DDTHH:mm:ss.SSSZ')">
+              {{ "{{ time | formatDate(config.formats.time) }}" | safeHTML }}
+            </time>
 
-          <svg viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" width="21" height="21" aria-hidden="true">
-            <path d="M10.635.001c5.921.112 11.111 5.904 10.263 11.967C20.206 16.914 15.528 21 10.5 21 5.508 21 .803 16.985.101 11.968-.713 6.147 4.081.12 10.364.001h.271zm-.258 1C5.016 1.103.324 6.34 1.092 11.829 1.719 16.311 5.95 20 10.5 20c5.528 0 10.413-5.646 9.33-11.299-.81-4.223-4.726-7.615-9.208-7.7h-.245zM10.5 4.5c3.311 0 6 2.689 6 6s-2.689 6-6 6-6-2.689-6-6 2.689-6 6-6z" />
+            <svg viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" width="21" height="21" aria-hidden="true">
+              <path d="M10.635.001c5.921.112 11.111 5.904 10.263 11.967C20.206 16.914 15.528 21 10.5 21 5.508 21 .803 16.985.101 11.968-.713 6.147 4.081.12 10.364.001h.271zm-.258 1C5.016 1.103.324 6.34 1.092 11.829 1.719 16.311 5.95 20 10.5 20c5.528 0 10.413-5.646 9.33-11.299-.81-4.223-4.726-7.615-9.208-7.7h-.245zM10.5 4.5c3.311 0 6 2.689 6 6s-2.689 6-6 6-6-2.689-6-6 2.689-6 6-6z" />
+            </svg>
+          </dd>
+        </div>
+        <div class="search-result__total-receitps">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50.0333" height="56.0667" aria-hidden="true">
+            <path d="M49.488 43.764L25.414 55.903c-.013.006-.029.003-.043.01a.93.93 0 0 1-.371.088V25.764L50 13.16v29.768a.936.936 0 0 1-.512.836zM.469 12.242l.003-.002c.01-.006.017-.014.027-.019L23.647.082a.917.917 0 0 1 .829-.013L48.594 11.78l-24.52 12.363L.469 12.242zm22.679 42.936L.512 43.764A.936.936 0 0 1 0 42.928V14.093l23.148 11.671v29.414z" />
           </svg>
-        </dd>
-      </div>
-      <div class="search-result__total-receitps">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50.0333" height="56.0667" aria-hidden="true">
-          <path d="M49.488 43.764L25.414 55.903c-.013.006-.029.003-.043.01a.93.93 0 0 1-.371.088V25.764L50 13.16v29.768a.936.936 0 0 1-.512.836zM.469 12.242l.003-.002c.01-.006.017-.014.027-.019L23.647.082a.917.917 0 0 1 .829-.013L48.594 11.78l-24.52 12.363L.469 12.242zm22.679 42.936L.512 43.764A.936.936 0 0 1 0 42.928V14.093l23.148 11.671v29.414z" />
-        </svg>
-        <dt>
-          {{ i18n "totalReceipts" }}:
-        </dt>
-        <dd>
-          100.000
-        </dd>
-      </div>
-      <div class="search-result__total-amount">
-        <dt>
-          {{ i18n "totalAmount" }}:
-        </dt>
-        <dd>
-          R$500.000
-        </dd>
-      </div>
-      <div class="search-result__block">
-        <dt>
-          {{ i18n "block" }}:
-        </dt>
-        <dd>
-          <code>325075</code>
-        </dd>
-      </div>
-      <div class="search-result__hash">
-        <dt>
-          {{ i18n "hash" }}:
-        </dt>
-        <dd>
-          <code>a6b37c4d9e8f27d3e4a8c3f2d6e3a2c9b1a7b3c6a67c2e4f1da5f9b4d7c2</code>
-        </dd>
-      </div>
-    </dl>
-  </summary>
-  <table class="search-result__details">
-    <thead>
-      <tr>
-        <th>
-          {{ i18n "candidate" }}
-        </th>
-        <th>
-          {{ i18n "hash" }}
-        </th>
-        <th>
-          {{ i18n "dateTime" }}
-        </th>
-        <th>
-          {{ i18n "transactionId" }}
-        </th>
-        <th class="numeric">
-          {{ i18n "amount" }}
-        </th>
-        <th>
-          {{ i18n "payment" }}
-        </th>
-        <th>
-          {{ i18n "receipt" 1 }}
-        </th>
-        <th>
-          {{ i18n "donor" }}
-        </th>
-        <th>
-          {{ i18n "cpf" | markdownify }}
-        </th>
-      </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <th>
-          {{ i18n "candidate" }}
-        </th>
-        <th>
-          {{ i18n "hash" }}
-        </th>
-        <th>
-          {{ i18n "dateTime" }}
-        </th>
-        <th>
-          {{ i18n "transactionId" }}
-        </th>
-        <th class="numeric">
-          {{ i18n "amount" }}
-        </th>
-        <th>
-          {{ i18n "payment" }}
-        </th>
-        <th>
-          {{ i18n "receipt" 1 }}
-        </th>
-        <th>
-          {{ i18n "donor" }}
-        </th>
-        <th>
-          {{ i18n "cpf" | markdownify }}
-        </th>
-      </tr>
-    </tfoot>
-    <tbody>
-      {{ partial "microtemplates/blockDetail.html" . }}
-      {{ partial "microtemplates/blockDetail.html" . }}
-      {{ partial "microtemplates/blockDetail.html" . }}
-      {{ partial "microtemplates/blockDetail.html" . }}
-      {{ partial "microtemplates/blockDetail.html" . }}
-      {{ partial "microtemplates/blockDetail.html" . }}
-      {{ partial "microtemplates/blockDetail.html" . }}
-      {{ partial "microtemplates/blockDetail.html" . }}
-      {{ partial "microtemplates/blockDetail.html" . }}
-      {{ partial "microtemplates/blockDetail.html" . }}
-      {{ partial "microtemplates/blockDetail.html" . }}
-      {{ partial "microtemplates/blockDetail.html" . }}
-    </tbody>
-  </table>
-</details>
+          <dt>
+            {{ i18n "totalReceipts" }}:
+          </dt>
+          <dd>
+            {{ "{{ donations.length }}" }}
+          </dd>
+        </div>
+        <div class="search-result__total-amount">
+          <dt>
+            {{ i18n "totalAmount" }}:
+          </dt>
+          <dd>
+            R$ {{ "{{ totalAmount(donations) | formatBRL }}" }}
+          </dd>
+        </div>
+        <div class="search-result__block" v-if="block">
+          <dt>
+            {{ i18n "block" }}:
+          </dt>
+          <dd>
+            <code>{{ "{{ block }}" }}</code>
+          </dd>
+        </div>
+        <div class="search-result__hash">
+          <dt>
+            {{ i18n "hash" }}:
+          </dt>
+          <dd>
+            <code>{{ "{{ hash }}" }}</code>
+          </dd>
+        </div>
+      </dl>
+    </summary>
+    <table class="search-result__details">
+      <thead>
+        <tr>
+          <th>
+            {{ i18n "candidate" }}
+          </th>
+          <th>
+            {{ i18n "hash" }}
+          </th>
+          <th>
+            {{ i18n "dateTime" }}
+          </th>
+          <th>
+            {{ i18n "transactionId" }}
+          </th>
+          <th class="numeric">
+            {{ i18n "amount" }}
+          </th>
+          <th>
+            {{ i18n "payment" }}
+          </th>
+          <th>
+            {{ i18n "receipt" 1 }}
+          </th>
+          <th>
+            {{ i18n "donor" }}
+          </th>
+          <th>
+            {{ i18n "cpf" | markdownify }}
+          </th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>
+            {{ i18n "candidate" }}
+          </th>
+          <th>
+            {{ i18n "hash" }}
+          </th>
+          <th>
+            {{ i18n "dateTime" }}
+          </th>
+          <th>
+            {{ i18n "transactionId" }}
+          </th>
+          <th class="numeric">
+            {{ i18n "amount" }}
+          </th>
+          <th>
+            {{ i18n "payment" }}
+          </th>
+          <th>
+            {{ i18n "receipt" 1 }}
+          </th>
+          <th>
+            {{ i18n "donor" }}
+          </th>
+          <th>
+            {{ i18n "cpf" | markdownify }}
+          </th>
+        </tr>
+      </tfoot>
+      <tbody>
+        <block-detail v-for="(donation, index) in donations" :donation="donation" :key="index" />
+      </tbody>
+    </table>
+  </details>
+</script>
