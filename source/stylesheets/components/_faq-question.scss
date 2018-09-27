@@ -27,6 +27,7 @@
 
   background-image: image('opener.png');
   background-position: right #{$leading * 1rem} top 50%;
+  background-size: 20px 11px;
   background-color: palette('white');
 
   border-left-width: $left-border;

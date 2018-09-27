@@ -26,6 +26,8 @@
   margin-left: auto;
 
   background-image: image('logo-rodape.png');
+  background-position: 50% 50%;
+  background-size: 171px 49px;
 
   /* @2x Images (Pixel Ratio of 1.25+) */
   @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.25dppx) {
@@ -36,7 +38,6 @@
   @media only screen and (min-device-pixel-ratio: 2.25), only screen and (min-resolution: 216dpi), only screen and (min-resolution: 2.25dppx) {
     background-image: image('logo-rodape@3x.png');
   }
-  background-position: 50% 50%;
 }
 
 .social-networks {
@@ -65,6 +66,7 @@
 
 .social-networks__profile--facebook a {
   background-image: image('ic-logo-facebook.png');
+  background-size: 12px 22px;
 
   /* @2x Images (Pixel Ratio of 1.25+) */
   @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.25dppx) {
@@ -79,6 +81,7 @@
 
 .social-networks__profile--youtube a {
   background-image: image('ic-logo-youtube.png');
+  background-size: 31px 21px;
 
   /* @2x Images (Pixel Ratio of 1.25+) */
   @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.25dppx) {
@@ -93,6 +96,7 @@
 
 .social-networks__profile--twitter a {
   background-image: image('ic-logo-twitter.png');
+  background-size: 26px 21px;
 
   /* @2x Images (Pixel Ratio of 1.25+) */
   @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.25dppx) {
