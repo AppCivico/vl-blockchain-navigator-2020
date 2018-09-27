@@ -1,6 +1,7 @@
-const Vue = require('vue/dist/vue.js');
-
 const Chartist = require('chartist');
+const dayjs = require('dayjs');
+const Vue = require('vue/dist/vue.min.js');
 
-window.Vue = Vue;
 window.Chartist = Chartist;
+window.dayjs = dayjs;
+window.Vue = Vue;
