@@ -26,6 +26,10 @@ export default {
               type: Array,
               required: false,
             },
+            highlight: {
+              type: Number,
+              required: false,
+            },
             block: {
               type: Number,
               required: false,

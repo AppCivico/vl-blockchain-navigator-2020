@@ -15,7 +15,7 @@
         </p>
       </header>
 
-      <search-result v-for="(node, index) in nodes" :key="index" :donations="node.donations" :hash="node.decred_merkle_root" :time="node.timestamp" />
+      <search-result v-for="(node, index) in nodes" :key="index" :donations="node.donations" :hash="node.decred_merkle_root" :time="node.timestamp" :highlight="node.highlight" />
     </div>
   </section>
 </script>
