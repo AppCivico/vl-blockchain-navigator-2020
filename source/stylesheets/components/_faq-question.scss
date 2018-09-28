@@ -61,6 +61,12 @@
 
 .faq-item__answer {
   background-color: palette('shadow', 'reverse');
+
+  @media screen and (min-width: calc(33em * 1.5)) {
+    column-count: 2;
+    column-fill: balance;
+    column-gap: $gutter;
+  }
 }
 
 .faq-item__answer > :last-child {
