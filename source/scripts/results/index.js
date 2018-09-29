@@ -1,7 +1,7 @@
 import searchResults from './components/searchResults';
 
 export default {
-  el: '#search-results-wrapper',
+  el: '#search-results-insertion-point',
   template: '#search-form',
   name: 'search-results-wrapper',
   components: {
