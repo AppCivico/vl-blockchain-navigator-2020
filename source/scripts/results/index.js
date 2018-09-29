@@ -1,60 +1,11 @@
+import searchResults from './components/searchResults';
 
 export default {
   el: '#search-results-wrapper',
   template: '#search-form',
   name: 'search-results-wrapper',
   components: {
-    'search-results': {
-      template: '#search-results',
-      props: {
-        nodes: {
-          type: Array,
-          required: false,
-        },
-      },
-      computed: {
-        now() {
-          return new Date().toISOString();
-        },
-      },
-      components: {
-        'search-result': {
-          template: '#search-result',
-          props: {
-            donations: {
-              type: Array,
-              required: false,
-            },
-            highlight: {
-              type: Number,
-              required: false,
-            },
-            block: {
-              type: Number,
-              required: false,
-            },
-            hash: {
-              type: String,
-              required: false,
-            },
-            time: {
-              type: Date,
-              required: false,
-            },
-          },
-          components: {
-            'block-detail': {
-              template: '#block-detail',
-              props: {
-                donation: {
-                  type: Object,
-                },
-              },
-            },
-          },
-        },
-      },
-    },
+    'search-results': searchResults,
   },
   data() {
     return {
