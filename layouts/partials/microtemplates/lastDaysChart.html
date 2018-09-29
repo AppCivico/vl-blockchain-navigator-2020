@@ -1,0 +1,24 @@
+
+<script type="text/x-template" id="last-days-chart">
+  <figure class="last-days-chart" :aria-busy="loading" hidden>
+    <div id="current-time-chart" class="chart-wrapper"></div>
+    <figcaption>
+      <dl>
+        <div>
+          <dt>{{ i18n "totalAmount" }}</dt>
+          <dd>
+            R${{ "{{ total_donations_amount | formatBRL }}" }}
+          </dd>
+          <dd>em {{ "{{ total_donations_count }}" }} doações</dd>
+        </div>
+        <div>
+          <dt>{{ i18n "last7DaysAmount" }}</dt>
+          <dd>
+            R${{ "{{ last_seven_days_amount | formatBRL }}" }}
+          </dd>
+          <dd>em {{ "{{ last_seven_days_count }}" }} doações</dd>
+        </div>
+      </dl>
+    </figcaption>
+  </figure>
+</script>

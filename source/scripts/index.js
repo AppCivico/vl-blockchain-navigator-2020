@@ -2,7 +2,7 @@
 
 import config from './config';
 import utilities from './utilities';
-import initGraph from './graph';
+import vueGraph from './graph';
 import vueResults from './results';
 
 utilities.formatDate = function formatDate(date, format = 'YYYY-MM-DDTHH:mm:ss.SSSZ') {
@@ -42,6 +42,5 @@ Vue.mixin({
   },
 });
 
+window.$vueGraph = new Vue(vueGraph);
 window.$vueResults = new Vue(vueResults);
-
-initGraph();

@@ -21,25 +21,12 @@
           {{ .Content }}
         </section>
 
-        <figure class="last-days-chart" id="lastDaysChart" aria-busy="true" hidden>
-          <div id="current-time-chart" class="chart-wrapper"></div>
-          <figcaption>
-            <dl>
-              <div>
-                <dt>{{ i18n "totalAmount" }}</dt>
-                <dd id="totalAmount"></dd>
-                <dd>em <span id="totalAmountDonations"></span> doações</dd>
-              </div>
-              <div>
-                <dt>{{ i18n "last7DaysAmount" }}</dt>
-                <dd id="last7DaysAmount"></dd>
-                <dd>em <span id="last7DaysAmountDonations"></span> doações</dd>
-              </div>
-            </dl>
-          </figcaption>
-        </figure>
+        <div id="last-days-chart-insertion-point"></div>
       </div>
     </article>
+
+    {{ partial "microtemplates/lastDaysChart.html" . }}
+
   {{ end }}
 
   {{ partial "search.html" . }}
