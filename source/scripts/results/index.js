@@ -1,4 +1,3 @@
-import config from '../config';
 
 export default {
   el: '#search-results-wrapper',
@@ -93,9 +92,9 @@ export default {
         cache: 'no-cache',
       };
 
-      const requestURI = config.api.domain
-        ? `https://${config.api.domain}${config.api.pathname}`
-        : config.api.pathname;
+      const requestURI = this.config.api.domain
+        ? `https://${this.config.api.domain}${this.config.api.pathname}`
+        : this.config.api.pathname;
 
       const requestData = new Request(`${requestURI}/${this.searchKey}`);
 
@@ -112,7 +111,7 @@ export default {
             window.history.pushState(
               { searchKey: this.searchKey },
               `Busca por ${this.searchKey}`,
-              `?${config.searchKey}=${this.searchKey}`,
+              `?${this.config.searchKey}=${this.searchKey}`,
             );
           }
           this.nodes = response.nodes;
