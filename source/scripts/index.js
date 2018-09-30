@@ -19,6 +19,9 @@ Vue.mixin({
     };
   },
   methods: {
+    isDateValid(date) {
+      return dayjs(date).isValid();
+    },
     totalAmount(items = []) {
       return items.reduce((accumulator, currentValue) => accumulator + currentValue.amount, 0);
     },
