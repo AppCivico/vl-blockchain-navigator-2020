@@ -79,7 +79,7 @@ export default {
           };
 
           Chartist.Line('#current-time-chart', data, chartOptions, chartResponsiveOptions);
-
+        }).then(() => {
           this.loading = false;
         });
     },
