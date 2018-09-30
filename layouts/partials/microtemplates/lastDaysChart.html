@@ -2,21 +2,29 @@
 <script type="text/x-template" id="last-days-chart">
   <figure class="last-days-chart" :aria-busy="loading" hidden>
     <div id="current-time-chart" class="chart-wrapper"></div>
-    <figcaption>
+    <figcaption
+      v-if="total_donations_amount
+        || total_donations_count
+        || last_seven_days_amount
+        || last_seven_days_count">
       <dl>
-        <div>
+        <div v-if="total_donations_amount || total_donations_count">
           <dt>{{ i18n "totalAmount" }}</dt>
-          <dd>
+          <dd v-if="total_donations_amount">
             R${{ "{{ total_donations_amount | formatBRL }}" }}
           </dd>
-          <dd>em {{ "{{ total_donations_count }}" }} doações</dd>
+          <dd v-if="total_donations_count">
+            em {{ "{{ total_donations_count }}" }} doações
+          </dd>
         </div>
-        <div>
+        <div v-if="last_seven_days_amount || last_seven_days_count">
           <dt>{{ i18n "last7DaysAmount" }}</dt>
-          <dd>
+          <dd v-if="last_seven_days_amount">
             R${{ "{{ last_seven_days_amount | formatBRL }}" }}
           </dd>
-          <dd>em {{ "{{ last_seven_days_count }}" }} doações</dd>
+          <dd v-if="last_seven_days_count">
+            em {{ "{{ last_seven_days_count }}" }} doações
+          </dd>
         </div>
       </dl>
     </figcaption>
