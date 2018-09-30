@@ -72,7 +72,7 @@ export default {
       for (let i = 0; i < this.xhr_request.length; i += 1) {
         this.xhr_request.shift().abort();
       }
-      this.metadata.loading = false;
+      this.loading = false;
     },
     showElement() {
       if (this.$el.hasAttribute('hidden')) {
