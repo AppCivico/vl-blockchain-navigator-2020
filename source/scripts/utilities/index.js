@@ -1,4 +1,8 @@
 export default {
+  booleanToString(value, trueText, falseText) {
+    return value ? trueText || 'true' : falseText || 'false';
+  },
+
   formatBRLDec(amount) {
     let formated = `${amount}`;
     formated = formated.replace(/([0-9]{2})$/g, ',$1');
