@@ -66,7 +66,7 @@ export default {
             );
           }
           this.nodes = response.nodes;
-        });
+        }).then(() => { this.loading = false; });
     },
     cancelRequest() {
       for (let i = 0; i < this.xhr_request.length; i += 1) {

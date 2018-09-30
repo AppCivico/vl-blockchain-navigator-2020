@@ -8,6 +8,10 @@ export default {
       type: Array,
       required: false,
     },
+    loading: {
+      type: Boolean,
+      default: true,
+    },
   },
   components: {
     'search-result': searchResult,
