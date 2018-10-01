@@ -1,3 +1,4 @@
+/* global dayjs */
 import searchResults from './components/searchResults';
 
 export default {
@@ -9,23 +10,41 @@ export default {
   },
   data() {
     return {
-      searchKey: '',
+      searchQueryDisplay: '',
       loading: true,
       nodes: [],
       debug: true,
-      error: null,
+      error: '',
       xhr_request: [],
     };
   },
-  created() {
+  computed: {
+    rawSearchQuery() {
+      const searchQuery = this.searchQueryDisplay || this.getQueryString()[this.config.searchKey] || '';
+
+      if (dayjs(searchQuery).isValid()) {
+        return dayjs(searchQuery).format(this.config.formats.dateQuery);
+      }
+
+      if (/^(\d\d?)[\s/.-](\d\d?)[\s/.-]((?:\d\d){1,2})$/.test(searchQuery)) {
+        const dateParts = searchQuery.match(/^(\d\d?)[\s/.-](\d\d?)[\s/.-]((?:\d\d){1,2})$/);
+
+        if (String(dateParts[3]).length === 2) {
+          dateParts[3] = `20${dateParts[3]}`;
+        }
+
+        return dayjs(`${dateParts[3]}-${dateParts[2]}-${dateParts[1]}`).format(this.config.formats.dateQuery);
+      }
+
+      return searchQuery;
+    },
   },
   mounted() {
-    const pathArray = window.location.pathname.split('/');
-    const lastURLSegment = pathArray[pathArray.length - 1];
+    const searchQuery = this.getQueryString()[this.config.searchKey] || '';
 
-    if (lastURLSegment) {
-      this.searchKey = lastURLSegment;
-    }
+    this.searchQueryDisplay = dayjs(searchQuery).isValid()
+      ? dayjs(searchQuery).format(this.config.formats.date)
+      : searchQuery;
 
     this.loadResults();
     this.showElement();
@@ -44,15 +63,27 @@ export default {
         credentials: 'same-origin',
       };
 
-      const requestURI = this.config.api.domain
+      let requestURI = this.config.api.domain
         ? `https://${this.config.api.domain}${this.config.api.pathname}`
         : this.config.api.pathname;
 
-      const requestData = new Request(`${requestURI}/${this.searchKey}`);
+      if (this.rawSearchQuery) {
+        console.log('this.rawSearchQuery', this.rawSearchQuery);
+        console.log('this.getQueryString()[this.config.searchKey]', this.getQueryString()[this.config.searchKey]);
+        requestURI += `/search/${this.rawSearchQuery}`;
+
+        if (this.rawSearchQuery !== this.getQueryString()[this.config.searchKey]) {
+          window.history.pushState({
+            searchKey: this.rawSearchQuery,
+          },
+          `Busca por ${this.searchQueryDisplay}`,
+          `?${this.config.searchKey}=${this.rawSearchQuery}`);
+        }
+      }
 
       this.loading = true;
 
-      fetch(requestData, requestOptions)
+      fetch(new Request(requestURI), requestOptions)
         .then((response) => {
           if (response.ok) {
             return response;
@@ -72,17 +103,12 @@ export default {
           );
         })
         .then((response) => {
-          if (this.searchKey) {
-            window.history.pushState(
-              { searchKey: this.searchKey },
-              `Busca por ${this.searchKey}`,
-              `?${this.config.searchKey}=${this.searchKey}`,
-            );
-          }
           this.nodes = response.nodes;
           this.loading = false;
         })
         .catch((err) => {
+          this.nodes = [];
+          this.loading = false;
           this.error = this.handleErrorMessage(err);
           throw err;
         });
