@@ -27,18 +27,18 @@ export default {
       return items.reduce((accumulator, currentValue) => accumulator + currentValue.amount, 0);
     },
     url(donation) {
-      const {
-        slug = '',
-      } = donation.candidate;
+      const candidateSlug = donation.candidate.slug || donation.candidate_slug;
+      const candidateCustomUrl = donation.candidate.custom_url || donation.candidate_custom_url;
+
       const decredDataDigest = donation.decred_data_digest || '';
 
-      const candidateUrl = slug
-        ? `https://${config.candidates.domain}${config.candidates.pathname}/${slug}`
-        : '#';
+      const candidateUrl = candidateCustomUrl || (candidateSlug
+        ? `https://${config.candidates.domain}${config.candidates.pathname}/${candidateSlug}`
+        : '');
 
-      const receiptUrl = slug && decredDataDigest
-        ? `${candidateUrl}${config.receipts.pathname}/${decredDataDigest}`
-        : '#';
+      const receiptUrl = candidateSlug && decredDataDigest
+        ? `https://${config.candidates.domain}${config.candidates.pathname}/${candidateSlug}${config.receipts.pathname}/${decredDataDigest}`
+        : '';
 
       return {
         candidate: candidateUrl,
