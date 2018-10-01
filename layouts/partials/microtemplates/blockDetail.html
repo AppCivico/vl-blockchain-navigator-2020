@@ -1,7 +1,7 @@
 <script type="text/x-template" id="block-detail">
   <tr :class="{'highlight': donation.highlight}">
     <td title="{{ i18n "candidate" }}">
-      <a :href="url(donation).candidate" v-if="donation.candidate.slug">
+      <a :href="url(donation).candidate" v-if="url(donation).candidate">
         {{ "{{ donation.candidate.popular_name }}" }}
         <svg xmlns="http://www.w3.org/2000/svg" width="16.032" height="16.032" aria-hidden="true">
           <title>{{ i18n "receipt" 1 }}</title>
@@ -33,7 +33,7 @@
     </td>
     <td title="{{ i18n "receipt" 1 }}">
       <a :href="url(donation).receipt"
-        v-if="donation.decred_data_digest && donation.candidate.slug"
+        v-if="url(donation).receipt"
         target="_blank" class="receipt"
         >&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16.032" height="16.032" role="img" aria-label="{{ i18n "receipt" 1 }}">
           <title>{{ i18n "receipt" 1 }}</title>
