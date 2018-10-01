@@ -17,8 +17,10 @@ export default {
     'search-result': searchResult,
   },
   computed: {
-    now() {
-      return new Date().toISOString();
+    thisDate() {
+      return this.nodes[0]
+        ? this.nodes[0].decred_merkle_root_timestamp
+        : 0;
     },
   },
 };

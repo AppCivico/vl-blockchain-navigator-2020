@@ -5,8 +5,8 @@
         <h2>{{ i18n "results" }}</h2>
         <p>
           {{ i18n "date" }}:
-          <time :datetime="$options.filters.formatDate(now, 'YYYY-MM-DDTHH:mm:ss.SSSZ') ">
-            {{ "{{ now | formatDate(config.formats.date) }}" | safeHTML }}
+          <time :datetime="$options.filters.formatDate(thisDate, 'YYYY-MM-DDTHH:mm:ss.SSSZ') ">
+            {{ "{{ thisDate | formatDate(config.formats.date) }}" | safeHTML }}
           </time>
 
           <svg viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" width="21" height="21" aria-hidden="true">
