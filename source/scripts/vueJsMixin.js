@@ -17,6 +17,9 @@ export default {
     };
   },
   methods: {
+    handleErrorMessage(err) {
+      return err.message || err.name || err.data[0].message;
+    },
     isDateValid(date) {
       return dayjs(date).isValid();
     },
