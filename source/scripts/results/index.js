@@ -41,6 +41,7 @@ export default {
         headers: requestheaders,
         mode: 'cors',
         cache: 'no-cache',
+        credentials: 'same-origin',
       };
 
       const requestURI = this.config.api.domain
@@ -49,15 +50,28 @@ export default {
 
       const requestData = new Request(`${requestURI}/${this.searchKey}`);
 
+      this.loading = true;
+
       fetch(requestData, requestOptions)
+        .then((response) => {
+          if (response.ok) {
+            return response;
+          }
+          return Promise.reject(
+            new Error(`${response.status}: ${response.statusText}`),
+          );
+        })
         .then((response) => {
           const contentType = response.headers.get('content-type');
 
           if (contentType && contentType.includes('application/json')) {
             return response.json();
           }
-          throw new TypeError("Oops, we haven't got JSON!");
-        }).then((response) => {
+          return Promise.reject(
+            new Error("Oops, we haven't got JSON!"),
+          );
+        })
+        .then((response) => {
           if (this.searchKey) {
             window.history.pushState(
               { searchKey: this.searchKey },
@@ -66,8 +80,11 @@ export default {
             );
           }
           this.nodes = response.nodes;
-        }).then(() => {
           this.loading = false;
+        })
+        .catch((err) => {
+          this.error = this.handleErrorMessage(err);
+          throw err;
         });
     },
     cancelRequest() {
