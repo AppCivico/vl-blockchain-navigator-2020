@@ -7,6 +7,7 @@ export default {
     date: 'DD.MM.YY',
     time: 'hh:mm',
     timestamp: 'DD.MM.YY - hh.mm',
+    dateQuery: 'YYYY-MM-DD',
   },
   candidates: {
     domain: 'votolegal.com.br',
