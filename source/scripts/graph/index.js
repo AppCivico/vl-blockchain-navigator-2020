@@ -17,13 +17,6 @@ export default {
   },
   created() {},
   mounted() {
-    const pathArray = window.location.pathname.split('/');
-    const lastURLSegment = pathArray[pathArray.length - 1];
-
-    if (lastURLSegment) {
-      this.searchKey = lastURLSegment;
-    }
-
     this.initGraph();
     this.showElement();
   },
