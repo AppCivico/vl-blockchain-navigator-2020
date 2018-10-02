@@ -88,9 +88,11 @@ export default {
           if (response.ok) {
             return response;
           }
-          return Promise.reject(
-            new Error(`${response.status}: ${response.statusText}`),
-          );
+
+          const error = new Error(response.statusText);
+          error.name = response.status;
+
+          return Promise.reject(error);
         })
         .then((response) => {
           const contentType = response.headers.get('content-type');

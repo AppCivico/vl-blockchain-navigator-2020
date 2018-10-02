@@ -3,6 +3,8 @@
 import config from './config';
 import utilities from './utilities';
 
+import errors from './httpErrors';
+
 utilities.formatDate = function formatDate(date, format = 'YYYY-MM-DDTHH:mm:ss.SSSZ') {
   return format !== 'YYYY-MM-DDTHH:mm:ss.SSSZ'
     ? dayjs(date).format(format)
@@ -18,7 +20,7 @@ export default {
   },
   methods: {
     handleErrorMessage(err) {
-      return err.message || err.name || err.data[0].message;
+      return errors[err.name] || err.message || err.name || err.data[0].message;
     },
     isDateValid(date) {
       return dayjs(date).isValid();
