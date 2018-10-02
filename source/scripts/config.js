@@ -17,5 +17,8 @@ export default {
     domain: 'votolegal.com.br',
     pathname: '/recibo',
   },
+  decred: {
+    transactionHref: 'https://explorer.dcrdata.org/tx',
+  },
   searchKey: 'buscar',
 };

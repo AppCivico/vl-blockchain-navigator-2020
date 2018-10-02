@@ -21,7 +21,14 @@
       {{ "{{ donation.captured_at | formatDate(config.formats.timestamp) }}" }}
     </td>
     <td title="{{ i18n "transactionId" }}" class="hash">
-      <code :title="donation.decred_capture_txid">
+      <a v-if="url(donation).transactionId"
+        :href="url(donation).transactionId"
+        target="_blank">
+        <code :title="donation.decred_capture_txid">
+          {{ "{{ donation.decred_capture_txid }}" }}
+        </code>
+      </a>
+      <code v-else :title="donation.decred_capture_txid">
         {{ "{{ donation.decred_capture_txid }}" }}
       </code>
     </td>

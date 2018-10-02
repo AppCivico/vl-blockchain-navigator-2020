@@ -21,9 +21,14 @@ export default {
         ? `https://${this.config.candidates.domain}${this.config.candidates.pathname}/${candidateSlug}${this.config.receipts.pathname}/${decredDataDigest}`
         : '';
 
+      const transactionUrl = donation.decred_capture_txid
+        ? `${this.config.decred.transactionHref}/${donation.decred_capture_txid}`
+        : '';
+
       return {
         candidate: candidateUrl,
         receipt: receiptUrl,
+        transactionId: transactionUrl,
       };
     },
   },
