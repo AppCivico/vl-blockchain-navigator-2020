@@ -227,7 +227,7 @@ $time-width: 6rem;
       border-color: $step;
     }
 
-    .search-result:nth-child(#{$i}n) .highlight {
+    .search-result:nth-child(#{$i}n) &.highlight {
       color: palette('text', 'light');
 
       background-color: $step;
@@ -249,6 +249,8 @@ $time-width: 6rem;
   overflow: hidden;
 
   text-overflow: ellipsis;
+
+  color: palette('text', 'dark');
 
   background-color: palette('gray', 'x-light');
 
@@ -447,6 +449,8 @@ $time-width: 6rem;
 
 .search-result__block code,
 .search-result__hash code {
+  @extend %gradient-steps;
+
   display: inline-block;
 
   width: auto;
@@ -471,8 +475,6 @@ $time-width: 6rem;
   @extend %reset-font-family;
 
   width: 100%;
-
-  padding: $gutter * 0.5;
 
   background-color: palette('white');
 
@@ -543,6 +545,8 @@ $time-width: 6rem;
   padding-top: $leading * 1rem;
   padding-bottom: $leading * 1rem;
 
+  text-align: center;
+
   color: palette('green', 'x-dark');
 
   border-style: solid;
@@ -561,7 +565,7 @@ $time-width: 6rem;
 .search-result__details tbody td {
   vertical-align: middle;
 
-  color: palette('text', 'dark');
+  color: inherit;
 
   border-bottom: $stroke solid palette('gray', 'x-light');
 
@@ -585,8 +589,4 @@ $time-width: 6rem;
 
     text-align: left;
   }
-}
-
-.search-result__details svg {
-  @extend %gradient-steps;
 }
