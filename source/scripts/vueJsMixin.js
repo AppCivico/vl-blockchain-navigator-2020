@@ -28,7 +28,7 @@ export default {
     totalAmount(items = []) {
       return items.reduce((accumulator, currentValue) => accumulator + currentValue.amount, 0);
     },
-    getQueryString(url = window.location.href) {
+    getQueryString(url = window.location.search) {
       const queryString = url.indexOf('?') !== -1
         ? url.split('?')[1]
         : [];
