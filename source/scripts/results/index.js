@@ -68,8 +68,6 @@ export default {
         : this.config.api.pathname;
 
       if (this.rawSearchQuery) {
-        console.log('this.rawSearchQuery', this.rawSearchQuery);
-        console.log('this.getQueryString()[this.config.searchKey]', this.getQueryString()[this.config.searchKey]);
         requestURI += `/search/${this.rawSearchQuery}`;
 
         if (this.rawSearchQuery !== this.getQueryString()[this.config.searchKey]) {
