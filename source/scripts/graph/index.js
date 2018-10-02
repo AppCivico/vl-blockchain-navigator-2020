@@ -34,8 +34,8 @@ export default {
       };
 
       const requestURI = this.config.api.domain
-        ? `https://${this.config.api.domain}${this.config.api.pathname}`
-        : this.config.api.pathname;
+        ? `https://${this.config.api.domain}${this.config.api.pathnames.chart}`
+        : this.config.api.pathnames.chart;
 
       const requestData = new Request(requestURI);
 
@@ -48,9 +48,9 @@ export default {
           }
           throw new TypeError("Oops, we haven't got JSON!");
         }).then((response) => {
-          Object.assign(this.$data, response.ui);
+          Object.assign(this.$data, response.chart);
 
-          const data = response.ui.last_seven_days_graph;
+          const data = response.chart.last_seven_days_graph;
 
           const chartOptions = {
             axisX: {

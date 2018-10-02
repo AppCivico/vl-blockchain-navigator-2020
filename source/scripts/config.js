@@ -1,7 +1,11 @@
 export default {
   api: {
     domain: (window.location.hostname.indexOf('blockchain.votolegal.com.br') !== -1 ? '' : 'api.votolegal.com.br'),
-    pathname: '/public-api/blockchain',
+    pathnames: {
+      lastDay: '/public-api/blockchain',
+      chart: '/public-api/blockchain/chart',
+      search: '/public-api/blockchain/search',
+    },
   },
   formats: {
     date: 'DD.MM.YY',
@@ -19,7 +23,10 @@ export default {
     pathname: '/recibo',
   },
   decred: {
-    transactionHref: 'https://explorer.dcrdata.org/tx',
+    domain: 'explorer.dcrdata.org',
+    pathnames: {
+      transactionId: '/tx',
+    },
   },
   searchKey: 'buscar',
 };

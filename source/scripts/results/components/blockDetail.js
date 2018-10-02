@@ -22,7 +22,7 @@ export default {
         : '';
 
       const transactionUrl = donation.decred_capture_txid
-        ? `${this.config.decred.transactionHref}/${donation.decred_capture_txid}`
+        ? `https://${this.config.decred.domain}${this.config.decred.pathnames.transactionId}/${donation.decred_capture_txid}`
         : '';
 
       return {

@@ -64,11 +64,11 @@ export default {
       };
 
       let requestURI = this.config.api.domain
-        ? `https://${this.config.api.domain}${this.config.api.pathname}`
-        : this.config.api.pathname;
+        ? `https://${this.config.api.domain}`
+        : '';
 
       if (this.rawSearchQuery) {
-        requestURI += `/search/${this.rawSearchQuery}`;
+        requestURI += `${this.config.api.pathnames.search}/${this.rawSearchQuery}`;
 
         if (this.rawSearchQuery !== this.getQueryString()[this.config.searchKey]) {
           window.history.pushState({
@@ -77,6 +77,8 @@ export default {
           `Busca por ${this.searchQueryDisplay}`,
           `?${this.config.searchKey}=${this.rawSearchQuery}#result`);
         }
+      } else {
+        requestURI += `${this.config.api.pathnames.lastDay}`;
       }
 
       this.loading = true;
