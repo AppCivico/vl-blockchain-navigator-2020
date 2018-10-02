@@ -22,14 +22,14 @@ export default {
     rawSearchQuery() {
       const searchQuery = this.searchQueryDisplay || this.getQueryString()[this.config.searchKey] || '';
 
-      if (dayjs(searchQuery).isValid()) {
+      if (/^(\d{4})-(\d{2})-(\d{2})$/.test(searchQuery)) {
         return dayjs(searchQuery).format(this.config.formats.dateQuery);
       }
 
       if (/^(\d\d?)[\s/.-](\d\d?)[\s/.-]((?:\d\d){1,2})$/.test(searchQuery)) {
         const dateParts = searchQuery.match(/^(\d\d?)[\s/.-](\d\d?)[\s/.-]((?:\d\d){1,2})$/);
 
-        if (String(dateParts[3]).length === 2) {
+        if (dateParts[3].length === 2) {
           dateParts[3] = `20${dateParts[3]}`;
         }
 
