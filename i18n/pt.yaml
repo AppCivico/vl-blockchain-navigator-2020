@@ -28,6 +28,8 @@
   translation: "Na mídia"
 - id: menu
   translation: "Menu"
+- id: notFound
+  translation: "Não encontrado"
 - id: partners
   translation: "Parceiros"
 - id: payment
