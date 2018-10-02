@@ -28,4 +28,9 @@ export default {
   components: {
     'block-detail': blockDetail,
   },
+  computed: {
+    hasHighlightedChild() {
+      return !!this.donations.filter(x => x.highlight).length;
+    },
+  },
 };
