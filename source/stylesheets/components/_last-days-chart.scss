@@ -5,6 +5,21 @@
   position: relative; // required by Chartist
 }
 
+.ct-vertical {
+  color: palette('green', 'dark');
+
+  &::after {
+    content: '\A0-';
+  }
+}
+
+.ct-line {
+  &[class] {
+    stroke: palette('petrol', 'dark');
+    stroke-width: $stroke;
+  }
+}
+
 .last-days-chart figcaption {
 }
 

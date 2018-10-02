@@ -52,19 +52,27 @@ export default {
 
           const data = response.ui.last_seven_days_graph;
 
-          data.labels = data.labels.map(x => dayjs(x).format(this.config.formats.date));
-
           const chartOptions = {
+            axisX: {
+              divisor: 7,
+              labelInterpolationFnc: value => dayjs(value).format(this.config.formats.dateChart),
+            },
+            axisY: {
+              showGrid: false,
+              labelInterpolationFnc(value) {
+                return `${value} mil`;
+              },
+              offset: 70,
+              scaleMinSpace: 25,
+            },
             chartPadding: {
-              right: 80,
+              right: 30,
             },
             fullWidth: true,
-            legend: {
-              display: true,
-              labels: {
-                fontColor: 'rgb(255, 99, 132)',
-              },
-            },
+            lineSmooth: Chartist.Interpolation.simple({
+              divisor: 1.5,
+            }),
+            showPoint: false,
           };
 
           const chartResponsiveOptions = {

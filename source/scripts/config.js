@@ -5,6 +5,7 @@ export default {
   },
   formats: {
     date: 'DD.MM.YY',
+    dateChart: 'DD.MM',
     time: 'hh:mm',
     timestamp: 'DD.MM.YY - hh.mm',
     dateQuery: 'YYYY-MM-DD',
