@@ -1,5 +1,5 @@
 <script type="text/x-template" id="block-detail">
-  <tr :class="{'highlight': donation.highlight}">
+  <tr :class="{'highlight': donation.highlight}" :id="donation.highlight ? 'result' : ''">
     <td title="{{ i18n "candidate" }}">
       <a :href="url(donation).candidate" v-if="url(donation).candidate">
         {{ "{{ donation.candidate.popular_name }}" }}

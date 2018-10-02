@@ -1,5 +1,5 @@
 <script type="text/x-template" id="search-result">
-  <details class="search-result" :open="hasHighlightedChild">
+  <details class="search-result" :open="hasHighlightedChild" :id="highlight ? 'result' : ''">
     <summary class="search-result__metadata">
       <dl>
         <div class="search-result__time" v-if="isDateValid(time)">

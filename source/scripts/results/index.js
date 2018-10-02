@@ -75,7 +75,7 @@ export default {
             searchKey: this.rawSearchQuery,
           },
           `Busca por ${this.searchQueryDisplay}`,
-          `?${this.config.searchKey}=${this.rawSearchQuery}`);
+          `?${this.config.searchKey}=${this.rawSearchQuery}#result`);
         }
       }
 
