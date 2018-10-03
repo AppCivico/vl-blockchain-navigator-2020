@@ -10,7 +10,7 @@
           {{ if .Title }}
             {{ with $.Site.Params.credits }}
               <h2>
-                {{ . }}
+                {{ . | markdownify }}
               </h2>
             {{ end }}
             <h1>

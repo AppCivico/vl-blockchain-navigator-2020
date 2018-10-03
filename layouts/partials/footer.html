@@ -29,7 +29,7 @@
           </p>
           {{ with $.Site.Params.credits }}
             <p>
-              {{ . }}
+              {{ . | markdownify }}
             </p>
           {{ end }}
         </div>
