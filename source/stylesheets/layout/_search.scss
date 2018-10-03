@@ -322,6 +322,15 @@ $time-width: 6rem;
   }
 }
 
+.search-result__metadata dt,
+.search-result__metadata dd {
+  display: inline;
+
+  @media screen and (min-width: breakpoint('6col')) {
+    display: block;
+  }
+}
+
 .search-result__metadata dt {
   font-size: ms(-2);
 }
@@ -522,12 +531,6 @@ $time-width: 6rem;
   padding: $gutter * 0.5;
 
   text-align: left;
-
-  @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
-    padding-top: 0;
-    padding-right: 0;
-    padding-left: 0;
-  }
 }
 
 .search-result__details .numeric {
@@ -575,8 +578,10 @@ $time-width: 6rem;
 }
 
 .search-result__details .hash {
-  padding-right: 0;
-  padding-left: 0;
+  @media screen and (min-width: breakpoint('toggle-table-layout')) {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .search-result__details .receipt {
