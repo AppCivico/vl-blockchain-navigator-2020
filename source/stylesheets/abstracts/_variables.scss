@@ -129,7 +129,7 @@ $modularscale: (
 $green--x-light: rgb(53, 211, 79);
 $green--light: rgb(8, 180, 146);
 $green: rgb(51, 153, 153);
-$green--dark: rgb(29, 122, 139);
+$green--dark: rgb(51, 102, 102);
 $green--x-dark: rgb(30, 91, 102);
 $gray--x-light: rgb(245, 245, 245);
 $gray--light: rgb(228, 228, 228);
@@ -137,7 +137,7 @@ $gray: rgb(186, 186, 186);
 $gray--dark: rgb(136, 136, 136);
 $gray--x-dark: rgb(75, 75, 75);
 $lightest: rgb(245, 245, 245);
-$darkest: rgb(75, 75, 75);
+$darkest: rgb(57, 57, 57);
 $petrol: rgb(45, 71, 93);
 $petrol--dark: rgb(35, 61, 84);
 $palette: (
@@ -221,7 +221,7 @@ $palette: (
     'dark': $darkest,
   ),
   'heading': (
-    'base': $green--x-light,
+    'base': $green--dark,
   )
 );
 
