@@ -1,5 +1,5 @@
 {{ with .Site.GetPage "/faq" }}
-  <article class="faq">
+  <article class="faq" id="{{ .Params.id }}">
     <div class="container">
       {{ with .Title }}
         <h1>

@@ -1,5 +1,5 @@
 <script type="text/x-template" id="search-form">
-  <article class="search">
+  <article class="search" id="{{ .Params.id }}">
     <div class="container">
       <form method="get" name="search-form" class="search__form" @submit.prevent="loadResults()">
         <fieldset>

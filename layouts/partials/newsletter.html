@@ -1,6 +1,6 @@
 {{ with .Site.GetPage "/newsletter" }}
   {{ if $.Site.Params.mailchimpNewsletterFormAction }}
-    <article class="newsletter">
+    <article class="newsletter" id="{{ .Params.id }}">
       <div id="mc_embed_signup" class="container">
         {{ with .Title }}
           <h1>
