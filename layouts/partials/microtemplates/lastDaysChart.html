@@ -1,0 +1,32 @@
+
+<script type="text/x-template" id="last-days-chart">
+  <figure class="last-days-chart" :aria-busy="loading | booleanToString">
+    <div id="current-time-chart" class="chart-wrapper ct-major-seventh"></div>
+    <figcaption
+      v-if="total_donations_amount
+        || total_donations_count
+        || last_seven_days_amount
+        || last_seven_days_count">
+      <dl>
+        <div v-if="total_donations_amount || total_donations_count">
+          <dt>{{ i18n "totalAmount" }}</dt>
+          <dd v-if="total_donations_amount">
+            R${{ "{{ total_donations_amount | formatBRL }}" }}
+          </dd>
+          <dd v-if="total_donations_count">
+            em {{ "{{ total_donations_count }}" }} doações
+          </dd>
+        </div>
+        <div v-if="last_seven_days_amount || last_seven_days_count">
+          <dt>{{ i18n "last7DaysAmount" }}</dt>
+          <dd v-if="last_seven_days_amount">
+            R${{ "{{ last_seven_days_amount | formatBRL }}" }}
+          </dd>
+          <dd v-if="last_seven_days_count">
+            em {{ "{{ last_seven_days_count }}" }} doações
+          </dd>
+        </div>
+      </dl>
+    </figcaption>
+  </figure>
+</script>

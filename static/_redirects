@@ -1,0 +1,11 @@
+# Rewrite a dev domain aliases
+http://dev.blockchain.votolegal.com.br/* http://develop.blockchain.votolegal.com.br/:splat 200
+
+# Optional: Redirect default Netlify subdomain to primary domain
+http://compassionate-wilson-441664.netlify.com/* http://blockchain.votolegal.com.br/:splat 301!
+
+# Redirect HTTP to HTTPS
+http://blockchain.votolegal.com.br/* https://blockchain.votolegal.com.br/:splat 301!
+
+# Proxy API
+/public-api/* https://api.votolegal.com.br/public-api/:splat 200

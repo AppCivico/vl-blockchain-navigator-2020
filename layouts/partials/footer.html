@@ -1,0 +1,54 @@
+  <footer class="site-footer">
+    <div class="container">
+
+      <a class="votolegal-logo" href="https://votolegal.com.br">VotoLegal</a>
+
+      {{ with $.Site.Params.socialNetworksLinks }}
+        <ul class="social-networks">
+          {{ range $key, $value := . }}
+            <li class="social-networks__profile social-networks__profile--{{ $key | urlize }}">
+              <a href="{{ $value }}">{{ $key }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+
+      {{ with $.Site.Params.disclaimer }}
+        {{ $markdown := . | markdownify }}
+
+        {{ if not ( strings.Contains $markdown "<p>" ) }}
+          <p>{{ $markdown }}</p>
+        {{ else }}
+          {{ $markdown }}
+        {{ end }}
+      {{ end }}
+
+        <div class="colophon">
+          <p>
+            &copy; 2016&mdash;{{ now.Format "2006"}}
+          </p>
+          {{ with $.Site.Params.credits }}
+            <p>
+              {{ . | markdownify }}
+            </p>
+          {{ end }}
+        </div>
+    </div>
+  </footer>
+
+{{ partialCached "browserUpdate.html" . }}
+
+{{ with $.Scratch.Get "scriptsFooter" }}
+  {{ . | safeHTML }}
+{{ end }}
+
+{{ $vendorJS := resources.Get "assets/scripts/vendor.js" }}
+{{ $secureVendorJS := $vendorJS | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $secureVendorJS.RelPermalink }}" integrity="{{ $secureVendorJS.Data.Integrity }}"></script>
+
+{{ $js := resources.Get "assets/scripts/index.js" }}
+{{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+.last-days-chart {
+}
+
+.chart-wrapper {
+  position: relative; // required by Chartist
+}
+
+.ct-vertical {
+  color: palette('green', 'dark');
+
+  &::after {
+    content: '\A0-';
+  }
+}
+
+.ct-line {
+  &[class] {
+    stroke: palette('petrol', 'dark');
+    stroke-width: $stroke;
+  }
+}
+
+.ct-point {
+  &[class] {
+    stroke: palette('petrol', 'dark');
+    stroke-width: 7px;
+  }
+}
+
+.ct-label {
+  position: relative;
+
+  &.ct-horizontal {
+    top: 1.5em;
+    left: -1.25em;
+  }
+
+  &.ct-vertical {
+    left: -1em;
+  }
+}
+
+.last-days-chart figcaption {
+}
+
+.last-days-chart dl {
+  @media screen and (min-width: breakpoint('6col')) {
+    display: table;
+
+    width: 100%;
+
+    margin-top: $leading * 2rem;
+    margin-bottom: $leading * 1rem;
+
+    border-collapse: collapse;
+  }
+}
+
+.last-days-chart dl div {
+  margin-bottom: $leading * 1rem;
+
+  @media screen and (min-width: breakpoint('6col')) {
+    display: table-cell;
+
+    padding-right: $gutter * 0.5;
+    padding-left: $gutter * 0.5;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.last-days-chart dt {
+  font-weight: font-weight('bold');
+  font-size: ms(1);
+  line-height: inherit;
+
+  @media screen and (min-width: breakpoint('6col')) {
+    margin-bottom: $leading * 1rem;
+  }
+}
+
+.last-days-chart dd {
+  margin: 0;
+
+  font-weight: font-weight('heading');
+  font-size: ms(4);
+
+  word-wrap: break-word;
+
+  color: text-contrast(palette('white'), palette('green', 'light'));
+
+  @media screen and (min-width: breakpoint('6col')) {
+    font-size: ms(6);
+  }
+}
+
+.last-days-chart dd + dd {
+  font-weight: font-weight('text');
+  font-size: ms(1);
+
+  color: palette('gray');
+}

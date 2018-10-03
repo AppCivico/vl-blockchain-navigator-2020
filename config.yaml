@@ -1,0 +1,48 @@
+baseURL: "https://blockchain.votolegal.com.br"
+defaultContentLanguage: "pt"
+enableGitInfo: true
+enableMissingTranslationPlaceholders: true
+enableRobotsTXT: true
+disableHugoGeneratorInject: true
+disableKinds:
+  - "section"
+  - "taxonomy"
+  - "taxonomyTerm"
+  - "RSS"
+  - "sitemap"
+footnoteReturnLinkContents: "↩"
+googleAnalytics: ""
+languageCode: "pt-br"
+menu:
+  header:
+  - identifier: "search"
+    name: "Busca"
+    url: "#busca"
+    weight: 1
+  - identifier: "results"
+    name: "Registros"
+    url: "#registros"
+    weight: 2
+  - identifier: "faq"
+    name: "FAQ"
+    url: "#faq"
+    weight: 3
+metaDataFormat: "yaml"
+title: "Blockchain explorer"
+params:
+  credits: "Uma iniciativa <a href='http://www.appcivico.com/'>AppCívico</a>, <a href='http://www.mcce.org.br/'><abbr title='Movimento Contra Corrupção Eleitoral'>MCCE</abbr></a> e <a href='https://tecnologiaequidade.org.br/'>Instituto Tecnologia &amp; Equidade</a>"
+  disclaimer: "Voto Legal é uma plataforma aberta e baseada em software livre. Os realizadores não se responsabilizam pelas informações fornecidas pelos candidatos, nem pelo comportamento deles durante o período eleitoral, e se eleitos, durante seus respectivos mandatos. Este projeto é distribuido sob a licença **Affero General Public License**."
+  mailchimpNewsletterFormAction: "https://votolegal.list-manage.com/TK"
+  siteDescription: ""
+  tagline: ""
+  twitterUsername: "appcivico"
+  shareImages:
+    default: ""
+    twitter: ""
+    facebook: ""
+  socialNetworksLinks:
+    twitter: "https://twitter.com/appcivico"
+    # medium: "https://medium.com/app-civico"
+    facebook: "https://www.facebook.com/AppCivicoCSB"
+    # github: "https://github.com/AppCivico"
+    youtube: "https://www.youtube.com/channel/UCIuAzzWMogJV0r-mvFmjNNQ"

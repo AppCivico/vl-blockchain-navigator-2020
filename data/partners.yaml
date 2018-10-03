@@ -1,0 +1,13 @@
+list:
+  - alt: ""
+    link: "https://tecnologiaequidade.org.br/"
+    logotype: "/images/ite.png"
+    name: "Instituto Tecnologia &amp; Equidade"
+    slug: ite
+    weight: 0
+  - alt: ""
+    link: "http://www.mcce.org.br/"
+    logotype: "/images/MCCE_logo.png"
+    name: MCCE
+    slug: mcce
+    weight: 0

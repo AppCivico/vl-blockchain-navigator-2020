@@ -1,0 +1,131 @@
+menu,
+nav {
+  display: table;
+
+  font-size: ms(2);
+
+  text-align: left;
+
+  color: palette('green', 'dark');
+}
+
+menu ul,
+menu ol,
+nav ul,
+nav ol {
+  display: table-row;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+menu li,
+nav li {
+  display: table-cell;
+
+  padding-top: 0;
+  padding-right: $gutter * 0.5;
+  padding-bottom: 0;
+  padding-left: $gutter * 0.5;
+  margin: 0;
+
+  &::before {
+    content: none;
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+menu a,
+nav a {
+  @include link-undercover;
+
+  display: block;
+
+  padding-top: $leading * 0.5rem;
+  padding-bottom: $leading * 0.5rem;
+
+  overflow: hidden;
+
+  font-weight: font-weight('text');
+
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration: underline;
+
+    color: text-contrast(palette('white'), palette('green'));
+  }
+}
+
+.current > a {
+  pointer-events: none;
+}
+
+/* access
+---------------------------------------------------------------------------- */
+.skip-links {
+  display: block;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+.skip-links ul,
+.skip-links li {
+  display: block;
+}
+
+.skip-links a {
+  // sass-lint:disable-block no-important
+  @include visually-hidden--focusable;
+
+  position: relative !important;
+}
+
+/* pagination
+---------------------------------------------------------------------------- */
+.pagination {
+}
+
+.pagination__current {
+}
+
+.pagination__previous {
+}
+
+.pagination__next {
+}
+
+/// .menu-controller styles
+///
+/// @group helpers
+///
+/// @example html
+/// <label for="menu-controller" onclick>menu</label>
+///
+
+[for='menu-controller'] {
+  &::before {
+    font-size: 2em;
+    line-height: 0.75;
+    font-family: sans-serif;
+
+    vertical-align: middle;
+
+    content: '\20\2261\20';
+  }
+
+  @media screen and (min-width: breakpoint('toggle-menu')) {
+    display: none;
+  }
+}

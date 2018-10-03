@@ -1,0 +1,223 @@
+%loading-bg {
+  background-image: image('loading.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+%loading-el {
+  cursor: wait;
+
+  &::after {
+    @extend %loading-bg;
+
+    position: absolute;
+    top: $gutter * -0.5;
+    right: $gutter * -0.5;
+    bottom: $gutter * -0.5;
+    left: $gutter * -0.5;
+
+    display: flex;
+    z-index: layer('modal');
+
+    align-items: center;
+    justify-content: center;
+
+    padding: $gutter;
+
+    text-align: center;
+
+    color: palette('loading', 'foreground');
+
+    content: attr(data-aria-busy-message) '';
+  }
+
+  > * {
+    opacity: 0;
+  }
+}
+
+/// Content which loads **after** the page does, should be informed to user.
+///
+/// `[aria-busy='true']` adds a loading background to any loading element
+/// which can't be a parent and a pseudo element over any element other than
+/// `html`.
+///
+/// Don't forget to customize it to your needs. Speacially the background
+/// color.
+///
+/// Already applied to `embed` and `img`, which can cause issues with
+/// transparent images.
+///
+/// @author Sobral
+/// @group helpers
+///
+/// @example html
+///
+/// <dialog open aria-busy="true">
+///   <form method="dialog">
+///     [...]
+///   </form>
+/// </dialog>
+///
+[aria-busy='true'] {
+  > body,
+  &:not(html) {
+    @extend %loading-el;
+
+    position: relative;
+  }
+}
+
+[aria-busy='false'] {
+  > body,
+  &:not(html) {
+    > * {
+      opacity: 1;
+
+      animation-name: fade-in;
+      animation-duration: 200ms;
+      animation-timing-function: ease-in;
+      animation-delay: 400ms;
+      transition-delay: 400ms;
+      transition-duration: 200ms;
+      transition-property: opacity;
+      transition-timing-function: ease-in;
+
+      @at-root {
+        @keyframes fade-in {
+          0% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+
+      &:first-child {
+        animation-delay: 0ms;
+        transition-delay: 0ms;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 200ms;
+        transition-delay: 200ms;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 400ms;
+        transition-delay: 400ms;
+      }
+    }
+  }
+}
+
+img:not([src$='.png']):not([src$='.gif']),
+embed {
+  @extend %loading-bg;
+
+  background-size: auto;
+
+  &::after {
+    /*
+     *  Future proof reset
+     */
+    content: none;
+  }
+}
+
+input,
+output,
+keygen,
+textarea {
+  &[aria-busy='true'] {
+    @extend %loading-bg;
+
+    background-size: auto;
+  }
+}
+
+/// Load grid image background under the class `grid`
+///
+/// @author Sobral
+/// @group helpers
+///
+/// @example html
+/// <html class="grid">
+///   <body>
+///     [...]
+///   </body>
+/// </html>
+///
+.grid {
+  $n: $_mobile-columns - 1;
+
+  &::after,
+  &:root::before {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    z-index: layer('modal');
+
+    font-size: 1rem;
+
+    pointer-events: none;
+
+    content: 'breakpoint: phone';
+  }
+
+  &::after {
+    bottom: 0;
+    left: 0;
+
+    background-image: grid-image($n);
+    background-position: center top;
+
+    content: '';
+  }
+
+  &:root::before {
+    padding: $gutter;
+
+    background-color: palette('debug');
+
+    content: 'breakpoint: #{$n}col';
+
+    opacity: 0.75;
+  }
+
+  @each $key, $value in $breakpoints {
+    $n: $n + 1;
+
+    @if map-get($toggle-breakpoints, $key) == null {
+      @media screen and (min-width: breakpoint($key)) {
+        &::after {
+          background-image: grid-image($n);
+        }
+
+        &:root::before {
+          content: 'breakpoint: #{$key}';
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $max-width) {
+    &::after {
+      background-size: $max-width 100%;
+    }
+  }
+}
+
+.container {
+  max-width: $max-width;
+
+  padding-top: $leading * 4rem;
+  padding-right: $gutter;
+  padding-bottom: $leading * 4rem;
+  padding-left: $gutter;
+  margin-right: auto;
+  margin-left: auto;
+}

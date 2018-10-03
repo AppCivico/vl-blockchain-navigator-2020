@@ -1,0 +1,44 @@
+{{ $.Scratch.Add "scriptsHeader" `
+<link rel="preload" src="/public-api/blockchain" as="fetch"> ` }}{{ partial "header.html" . }}
+
+<main role="main" id="conteudo">
+
+  {{ if or .Content .Title }}
+    <article class="intro" id="intro">
+      <div class="container">
+        <section class="wrap-content">
+          {{ if .Title }}
+            {{ with $.Site.Params.credits }}
+              <h2>
+                {{ . | markdownify }}
+              </h2>
+            {{ end }}
+            <h1>
+              {{ .Title }}
+            </h1>
+          {{ end }}
+
+          {{ .Content }}
+        </section>
+
+        <div id="last-days-chart-insertion-point"></div>
+      </div>
+    </article>
+
+    {{ partial "microtemplates/lastDaysChart.html" . }}
+
+  {{ end }}
+
+  {{ partial "search.html" . }}
+
+  {{ partial "faq.html" . }}
+
+  {{ partial "newsletter.html" . }}
+
+  {{ partial "mediaClipping.html" . }}
+
+  {{ partial "partners.html" . }}
+
+</main>
+
+{{ partial "footer.html" . }}

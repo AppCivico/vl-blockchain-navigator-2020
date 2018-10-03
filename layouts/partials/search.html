@@ -1,0 +1,10 @@
+{{ with .Site.GetPage "/search" }}
+
+<div id="search-results-insertion-point"></div>
+
+{{ partial "microtemplates/searchForm.html" . }}
+{{ partial "microtemplates/searchResult.html" . }}
+{{ partial "microtemplates/searchResults.html" . }}
+{{ partial "microtemplates/blockDetail.html" . }}
+
+{{ end }}

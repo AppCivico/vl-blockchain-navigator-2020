@@ -1,0 +1,131 @@
+/**
+ * A large perceivable region that contains information about the parent document.
+ *
+ * Examples of information included in this region of the page are copyrights and links to privacy statements.
+ *
+ * Within any `document` or `application`, the author **SHOULD** mark no more than one element with the `contentinfo` role.
+ */
+.site-footer,
+[role='contentinfo'] {
+  text-align: center;
+
+  background-color: palette('green', 'x-light');
+}
+
+.votolegal-logo {
+  @include image-replacement;
+
+  display: block;
+
+  width: 100%;
+  max-width: 171px;
+  min-height: 49px;
+
+  margin-right: auto;
+  margin-bottom: $leading * 1rem;
+  margin-left: auto;
+
+  background-image: image('logo-rodape.png');
+  background-position: 50% 50%;
+  background-size: 171px 49px;
+
+  /* @2x Images (Pixel Ratio of 1.25+) */
+  @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.25dppx) {
+    background-image: image('logo-rodape@2x.png');
+  }
+
+  /* @3x Images (Pixel Ratio of 2.25+) */
+  @media only screen and (min-device-pixel-ratio: 2.25), only screen and (min-resolution: 216dpi), only screen and (min-resolution: 2.25dppx) {
+    background-image: image('logo-rodape@3x.png');
+  }
+}
+
+.social-networks {
+}
+
+.social-networks__profile {
+  display: inline-block;
+
+  list-style-type: none;
+
+  &::before {
+    content: none;
+  }
+}
+
+.social-networks__profile a {
+  @include image-replacement;
+
+  display: block;
+
+  min-width: 40px;
+  min-height: 40px;
+
+  background-position: 50% 50%;
+}
+
+.social-networks__profile--facebook a {
+  background-image: image('ic-logo-facebook.png');
+  background-size: 12px 22px;
+
+  /* @2x Images (Pixel Ratio of 1.25+) */
+  @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.25dppx) {
+    background-image: image('ic-logo-facebook@2x.png');
+  }
+
+  /* @3x Images (Pixel Ratio of 2.25+) */
+  @media only screen and (min-device-pixel-ratio: 2.25), only screen and (min-resolution: 216dpi), only screen and (min-resolution: 2.25dppx) {
+    background-image: image('ic-logo-facebook@3x.png');
+  }
+}
+
+.social-networks__profile--youtube a {
+  background-image: image('ic-logo-youtube.png');
+  background-size: 31px 21px;
+
+  /* @2x Images (Pixel Ratio of 1.25+) */
+  @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.25dppx) {
+    background-image: image('ic-logo-youtube@2x.png');
+  }
+
+  /* @3x Images (Pixel Ratio of 2.25+) */
+  @media only screen and (min-device-pixel-ratio: 2.25), only screen and (min-resolution: 216dpi), only screen and (min-resolution: 2.25dppx) {
+    background-image: image('ic-logo-youtube@3x.png');
+  }
+}
+
+.social-networks__profile--twitter a {
+  background-image: image('ic-logo-twitter.png');
+  background-size: 26px 21px;
+
+  /* @2x Images (Pixel Ratio of 1.25+) */
+  @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.25dppx) {
+    background-image: image('ic-logo-twitter@2x.png');
+  }
+
+  /* @3x Images (Pixel Ratio of 2.25+) */
+  @media only screen and (min-device-pixel-ratio: 2.25), only screen and (min-resolution: 216dpi), only screen and (min-resolution: 2.25dppx) {
+    background-image: image('ic-logo-twitter@3x.png');
+  }
+}
+
+.social-networks__profile--github a {
+  background: $placeholder-bg;
+}
+
+.social-networks__profile--medium a {
+  background: $placeholder-bg;
+}
+
+.colophon {
+}
+
+.colophon p {
+  display: inline;
+}
+
+.colophon p + p {
+  &::before {
+    content: '•';
+  }
+}
