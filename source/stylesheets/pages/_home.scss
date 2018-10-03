@@ -14,6 +14,10 @@
   margin: 0;
 }
 
+.intro section {
+  margin-bottom: $leading * 2rem;
+}
+
 .intro .container {
   display: flex;
 
