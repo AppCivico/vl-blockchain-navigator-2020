@@ -72,7 +72,6 @@ export default {
             lineSmooth: Chartist.Interpolation.simple({
               divisor: 1.5,
             }),
-            showPoint: false,
           };
 
           const chartResponsiveOptions = {
