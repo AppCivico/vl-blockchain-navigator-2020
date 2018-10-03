@@ -1,67 +1,13 @@
 list:
   - alt: ""
-    link: "https://www.youtube.com"
-    logotype: "/images/logo-TEDx-branco.png"
-    name: TEDx
-    slug: tedx
+    link: "https://tecnologiaequidade.org.br/"
+    logotype: "/images/ite.png"
+    name: "Instituto Tecnologia &amp; Equidade"
+    slug: ite
     weight: 0
   - alt: ""
-    link: "https://brasil.elpais.com"
-    logotype: "/images/logo-elpais-branco.png"
-    name: El País
-    slug: el-pais
-    weight: 0
-  - alt: ""
-    link: "http://cbn.globoradio.globo.com"
-    logotype: "/images/logo-cbn-branco.png"
-    name: CBN
-    slug: cbn
-    weight: 0
-  - alt: ""
-    link: "http://politica.estadao.com.br"
-    logotype: "/images/logo-estadao-branco.png"
-    name: Estadão
-    slug: estadao
-    weight: 0
-  - alt: ""
-    link: "http://g1.globo.com"
-    logotype: "/images/logo-jn-branco.png"
-    name: Jornal Nacional
-    slug: jornal-nacional
-    weight: 0
-  - alt: ""
-    link: "http://www1.folha.uol.com.br"
-    logotype: "/images/logo-folha-branco.png"
-    name: Folha de São Paulo
-    slug: folha-sp
-    weight: 0
-  - alt: ""
-    link: "https://super.abril.com.br"
-    logotype: "/images/logo-superinteressante-branco.png"
-    name: Super Interessante
-    slug: super-interessante
-    weight: 0
-  - alt: ""
-    link: "https://www.nexojornal.com.br"
-    logotype: "/images/logo-nexo-branco.png"
-    name: Nexo
-    slug: nexo
-    weight: 0
-  - alt: ""
-    link: "https://br.noticias.yahoo.com"
-    logotype: "/images/yahoo.png"
-    name: Yahoo
-    slug: yahoo
-    weight: 0
-  - alt: ""
-    link: "https://portaldobitcoin.com"
-    logotype: "/images/portal-bitcoin.png"
-    name: Portal do Bitcoin
-    slug: portal-bitcoin
-    weight: 0
-  - alt: ""
-    link: "https://livecoins.com.br"
-    logotype: "/images/livecoins.png"
-    name: Livecoins
-    slug: livecoins
+    link: "http://www.mcce.org.br/"
+    logotype: "/images/MCCE_logo.png"
+    name: MCCE
+    slug: mcce
     weight: 0
