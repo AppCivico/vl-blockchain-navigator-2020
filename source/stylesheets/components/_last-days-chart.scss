@@ -20,6 +20,26 @@
   }
 }
 
+.ct-point {
+  &[class] {
+    stroke: palette('petrol', 'dark');
+    stroke-width: 7px;
+  }
+}
+
+.ct-label {
+  position: relative;
+
+  &.ct-horizontal {
+    top: 1.5em;
+    left: -1.25em;
+  }
+
+  &.ct-vertical {
+    left: -1em;
+  }
+}
+
 .last-days-chart figcaption {
 }
 
@@ -73,7 +93,7 @@
 
   word-wrap: break-word;
 
-  color: palette('green', 'light');
+  color: text-contrast(palette('white'), palette('green', 'light'));
 
   @media screen and (min-width: breakpoint('6col')) {
     font-size: ms(6);
