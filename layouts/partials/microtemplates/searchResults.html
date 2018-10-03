@@ -1,5 +1,5 @@
 <script type="text/x-template" id="search-results">
-  <section class="search__results" :aria-busy="loading">
+  <section class="search__results" :aria-busy="loading | booleanToString">
     <div class="container">
       <header>
         <h2>{{ i18n "results" }}</h2>

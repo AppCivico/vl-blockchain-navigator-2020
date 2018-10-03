@@ -1,6 +1,6 @@
 
 <script type="text/x-template" id="last-days-chart">
-  <figure class="last-days-chart" :aria-busy="loading" hidden>
+  <figure class="last-days-chart" :aria-busy="loading | booleanToString">
     <div id="current-time-chart" class="chart-wrapper ct-major-seventh"></div>
     <figcaption
       v-if="total_donations_amount
