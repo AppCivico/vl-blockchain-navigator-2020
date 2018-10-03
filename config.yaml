@@ -42,7 +42,7 @@ params:
     facebook: ""
   socialNetworksLinks:
     twitter: "https://twitter.com/appcivico"
-    medium: "https://medium.com/app-civico"
+    # medium: "https://medium.com/app-civico"
     facebook: "https://www.facebook.com/AppCivicoCSB"
-    github: "https://github.com/AppCivico"
+    # github: "https://github.com/AppCivico"
     youtube: "https://www.youtube.com/channel/UCIuAzzWMogJV0r-mvFmjNNQ"
