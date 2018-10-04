@@ -1,7 +1,7 @@
 ---
 title: "Newsletter"
 date: 2018-09-14T12:11:17-03:00
-draft: true
+draft: false
 headless: true
 id: "newsletter"
 ---
