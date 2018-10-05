@@ -17,7 +17,9 @@
 
             <div class="mc-field-group">
               <label for="mce-EMAIL">{{ i18n "email" }}</label>
-              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" title="O domínio desse e-mail (a parte após o @) precisa ser válido."
+              pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
+              required>
             </div>
 
             <div id="mce-responses" class="clear">
@@ -27,7 +29,7 @@
 
             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
             <div style="position: absolute; left: -5000px;" aria-hidden="true">
-              <input type="text" name="b_6c682f04f1aa3afaa0c48b7c6_d3164920dd" tabindex="-1" value="">
+              <input type="text" name="b_0d4bd8cb58a460811f95cc194_274cf7e623" tabindex="-1" value="">
             </div>
 
             <button type="submit" name="subscribe" id="mc-embedded-subscribe">
@@ -39,7 +41,28 @@
         {{ $js := resources.Get "scripts/mailchimp-signup.js" }}
         {{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha512" }}
         <script asyn src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+        <script>
+          window.mailchimpMessages = {
+            'We have sent you a confirmation email': 'Enviamos um email de confirmação',
+            'Please enter a value': 'Por favor, preencha os campos exigidos',
+            'An email address must contain a single @': 'Um endereço de email precisa contar apenas um @',
+            'The domain portion of the email address is invalid (the portion after the @ )': 'O domínio (a parte após o @) do seu email é inválido',
+            'The username portion of the email address is invalid (the portion before the @ )': 'O nome de usuário (a parte antes do @) de seu email é inválido',
+            'This email address looks fake or invalid. Please enter a real email address': 'Esse email parece errado ou falso. Por favor, confira-o',
+            'is already subscribed to list': 'email já cadastrado nessa lista'
+          };
 
+          window.validationMessages = {
+            valueMissing: 'Por favor, preencha este campo.',
+            typeMismatchEmail: 'Por favor, forneça um endereço de email.',
+            typeMismatchURL: 'Por favor, forneça uma URL.',
+
+            patternMismatch: 'Por favor, respeite o formato exigido.',
+            badInput: 'Por favor, forneça um número.',
+            stepMismatch: 'Por favor, escolha um valor válido.',
+            general: 'O valor fornecido é inválido.'
+          };
+        </script>
       </div>
     </article>
   {{ end }}

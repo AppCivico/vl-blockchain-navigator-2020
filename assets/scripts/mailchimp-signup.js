@@ -573,7 +573,7 @@ window.displayMailChimpStatus = function (data) {
 		data.msg = data.msg.replace(/^\d+\s\-\s/, '');
 	}
 
-	if ( window.mailchimpMessages[data.msg]) {
+	if (window.mailchimpMessages && window.mailchimpMessages[data.msg]) {
 		data.msg = window.mailchimpMessages[data.msg];
 	}
 
