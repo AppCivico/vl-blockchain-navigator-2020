@@ -41,7 +41,28 @@
         {{ $js := resources.Get "scripts/mailchimp-signup.js" }}
         {{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha512" }}
         <script asyn src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+        <script>
+          window.mailchimpMessages = {
+            'We have sent you a confirmation email': 'Enviamos um email de confirmação',
+            'Please enter a value': 'Por favor, preencha os campos exigidos',
+            'An email address must contain a single @': 'Um endereço de email precisa contar apenas um @',
+            'The domain portion of the email address is invalid (the portion after the @ )': 'O domínio (a parte após o @) do seu email é inválido',
+            'The username portion of the email address is invalid (the portion before the @ )': 'O nome de usuário (a parte antes do @) de seu email é inválido',
+            'This email address looks fake or invalid. Please enter a real email address': 'Esse email parece errado ou falso. Por favor, confira-o',
+            'is already subscribed to list': 'email já cadastrado nessa lista'
+          };
 
+          window.validationMessages = {
+            valueMissing: 'Por favor, preencha este campo.',
+            typeMismatchEmail: 'Por favor, forneça um endereço de email.',
+            typeMismatchURL: 'Por favor, forneça uma URL.',
+
+            patternMismatch: 'Por favor, respeite o formato exigido.',
+            badInput: 'Por favor, forneça um número.',
+            stepMismatch: 'Por favor, escolha um valor válido.',
+            general: 'O valor fornecido é inválido.'
+          };
+        </script>
       </div>
     </article>
   {{ end }}
