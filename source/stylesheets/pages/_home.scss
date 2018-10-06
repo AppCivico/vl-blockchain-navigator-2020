@@ -1,4 +1,8 @@
 .intro {
+  display: flex;
+
+  align-items: center;
+
   min-height: 80vh;
 }
 
@@ -23,6 +27,7 @@
 .intro .container {
   display: flex;
 
+  flex-grow: 1;
   flex-wrap: wrap;
 }
 
