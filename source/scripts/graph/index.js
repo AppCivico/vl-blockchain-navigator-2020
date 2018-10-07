@@ -39,6 +39,8 @@ export default {
 
       const requestData = new Request(requestURI);
 
+      this.loading = true;
+
       fetch(requestData, requestOptions)
         .then((response) => {
           const contentType = response.headers.get('content-type');
