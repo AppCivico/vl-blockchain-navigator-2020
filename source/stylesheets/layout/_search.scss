@@ -78,7 +78,10 @@ $time-width: 6rem;
 .search__helper {
   position: relative;
 
-  padding: ($leading * 1rem) $gutter;
+  padding-top: ($leading * 1rem);
+  padding-right: $gutter;
+  padding-bottom: ($leading * 1rem) ;
+  padding-left: $gutter * 1.5;
 
   background-color: palette('shadow', 'reverse');
 
