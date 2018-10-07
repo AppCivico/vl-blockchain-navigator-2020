@@ -121,7 +121,7 @@ $time-width: 6rem;
 }
 
 .search__results .container {
-  $stroke-color: palette('gray', 'base');
+  $stroke-color: palette('gray', 'light');
 
   @media screen and (min-width: breakpoint('4col')) {
     background-image: linear-gradient(
