@@ -2,6 +2,8 @@
   translation: "Valor"
 - id: block
   translation: "Bloco"
+- id: cancel
+  translation: "Cancelar"
 - id: candidate
   translation: "Candidato"
 - id: content
