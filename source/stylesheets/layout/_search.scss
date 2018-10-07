@@ -32,9 +32,7 @@ $time-width: 6rem;
   }
 }
 
-.search__form [type='submit'] {
-  @include image-replacement;
-
+.search__form [type='reset'] {
   position: absolute;
   right: $gutter * 0.5;
 
@@ -48,19 +46,32 @@ $time-width: 6rem;
   margin-top: $leading * -2.5rem;
   margin-bottom: 0;
 
-  line-height: 1;
+  overflow: hidden;
 
-  background-image: image('submit.svg');
-  background-position: 50% 50%;
+  line-height: $leading * 1rem;
+
+  color: palette('white');
+
   background-color: palette('gray');
 
-  border: 2px solid palette('white');
+  border: 0;
   border-radius: 50%;
 
-  @media screen and (min-width: breakpoint('9col')) {
-    right: $gutter * -2;
+  &:hover,
+  &:focus {
+    background-color: palette('gray', 'dark');
+  }
 
-    background-color: transparent;
+  &::before {
+    display: block;
+
+    height: $leading * 1rem;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    content: '×';
   }
 }
 
