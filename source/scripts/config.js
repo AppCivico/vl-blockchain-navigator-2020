@@ -29,4 +29,5 @@ export default {
     },
   },
   searchKey: 'buscar',
+  chartUpdateInterval: 1000 * 60 * 60,
 };

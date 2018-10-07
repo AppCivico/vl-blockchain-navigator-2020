@@ -13,12 +13,18 @@ export default {
       debug: true,
       error: null,
       xhr_request: [],
+      intervalGraph: 0.0,
     };
   },
   created() {},
   mounted() {
     this.initGraph();
     this.showElement();
+    if (this.config.chartUpdateInterval) {
+      this.intervalGraph = setInterval(() => {
+        this.initGraph();
+      }, this.config.chartUpdateInterval);
+    }
   },
   methods: {
     initGraph() {
