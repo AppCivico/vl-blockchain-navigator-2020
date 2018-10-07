@@ -79,6 +79,11 @@ button,
 [type='submit'] {
   @extend %button-reset;
 
+  display: block;
+
+  margin-right: $gutter;
+  margin-left: auto;
+
   background-color: palette('button', 'submit');
 }
 
