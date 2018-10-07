@@ -379,13 +379,13 @@ $time-width: 6rem;
 
 .search-result__total-receitps {
   @media screen and (min-width: breakpoint('6col')) {
-    flex-basis: calc(45% - #{$gutter});
+    flex-basis: calc(35% - #{$gutter});
   }
 }
 
 .search-result__total-amount {
   @media screen and (min-width: breakpoint('6col')) {
-    flex-basis: calc(55% - #{$gutter});
+    flex-basis: calc(65% - #{$gutter});
   }
 }
 
