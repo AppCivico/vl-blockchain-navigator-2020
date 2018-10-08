@@ -75,7 +75,7 @@ export default {
             searchKey: this.rawSearchQuery,
           },
           `Busca por ${this.searchQueryDisplay}`,
-          `?${this.config.searchKey}=${this.rawSearchQuery}#result`);
+          `?${this.config.searchKey}=${this.rawSearchQuery}#registros`);
         }
       } else {
         requestURI += `${this.config.api.pathnames.lastDay}`;
