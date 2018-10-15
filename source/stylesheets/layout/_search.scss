@@ -125,6 +125,13 @@ $time-width: 6rem;
 
   @media screen and (min-width: breakpoint('4col')) {
     background-image: linear-gradient(
+      to bottom,
+      palette('gray', 'x-light') 0%,
+      palette('gray', 'x-light') $leading * 5rem,
+      transparent $leading * 4rem,
+      transparent 100%
+    ),
+    linear-gradient(
       to right,
       transparent 0%,
       transparent calc(#{$time-width} + #{$gutter * 0.5} - #{$stroke * 0.5}),
