@@ -1,6 +1,6 @@
 <script type="text/x-template" id="block-detail">
   <tr :class="{'highlight': donation.highlight}" :id="donation.highlight ? 'result' : ''">
-    <td title="{{ i18n "candidate" }}">
+    <td aria-label="{{ i18n "candidate" }}">
       <a :href="url(donation).candidate" v-if="url(donation).candidate">
         {{ "{{ donation.candidate.popular_name }}" }}
         <svg xmlns="http://www.w3.org/2000/svg" width="16.032" height="16.032" aria-hidden="true">
@@ -12,15 +12,15 @@
         {{ "{{ donation.candidate.popular_name }}" }}
       </template>
     </td>
-    <td title="{{ i18n "hash" }}" class="hash">
+    <td aria-label="{{ i18n "hash" }}" class="hash">
       <code :title="donation.decred_data_digest">
         {{ "{{ donation.decred_data_digest }}" }}
       </code>
     </td>
-    <td title="{{ i18n "dateTime" }}">
+    <td aria-label="{{ i18n "dateTime" }}">
       {{ "{{ donation.captured_at | formatDate(config.formats.timestamp) }}" }}
     </td>
-    <td title="{{ i18n "transactionId" }}" class="hash">
+    <td aria-label="{{ i18n "transactionId" }}" class="hash">
       <code :title="donation.decred_capture_txid">
         {{ "{{ donation.decred_capture_txid }}" }}
       </code>
@@ -33,13 +33,13 @@
         </svg>
       </a>
     </td>
-    <td title="{{ i18n "amount" }}" class="numeric">
+    <td aria-label="{{ i18n "amount" }}" class="numeric">
       R${{ "{{ donation.amount | formatBRL }}" }}
     </td>
-    <td title="{{ i18n "payment" }}">
+    <td aria-label="{{ i18n "payment" }}">
       {{ "{{ donation.payment_method_human }}" }}
     </td>
-    <td title="{{ i18n "receipt" 1 }}">
+    <td aria-label="{{ i18n "receipt" 1 }}">
       <a :href="url(donation).receipt"
         v-if="url(donation).receipt"
         target="_blank" class="receipt"
@@ -49,7 +49,7 @@
         </svg>
       </a>
     </td>
-    <td title="{{ i18n "donor" }}">
+    <td aria-label="{{ i18n "donor" }}">
       {{ "{{ donation.donor_name }}" }}
     </td>
   </tr>
