@@ -58,9 +58,6 @@ export default {
       const requestOptions = {
         method: 'GET',
         headers: requestheaders,
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
       };
 
       let requestURI = this.config.api.domain
@@ -85,14 +82,14 @@ export default {
 
       fetch(new Request(requestURI), requestOptions)
         .then((response) => {
-          if (response.ok) {
-            return response;
+          if (!response.ok) {
+            const error = new Error(response.statusText);
+
+            error.name = String(response.status);
+            Promise.reject(error);
           }
 
-          const error = new Error(response.statusText);
-          error.name = response.status;
-
-          return Promise.reject(error);
+          return response;
         })
         .then((response) => {
           const contentType = response.headers.get('content-type');
