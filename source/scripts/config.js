@@ -10,8 +10,8 @@ export default {
   formats: {
     date: 'DD.MM.YY',
     dateChart: 'DD.MM',
-    time: 'hh:mm',
-    timestamp: 'DD.MM.YY - hh.mm',
+    time: 'HH:mm',
+    timestamp: 'DD.MM.YY - HH.mm',
     dateQuery: 'YYYY-MM-DD',
   },
   candidates: {
