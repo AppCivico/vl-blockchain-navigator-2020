@@ -97,13 +97,13 @@ tbody td {
   @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
     text-align: left;
 
-    &[title] {
+    &[aria-label] {
       &::before {
         display: inline;
 
         font-weight: font-weight('bold');
 
-        content: attr(title)':\A0';
+        content: attr(aria-label)':\A0';
       }
     }
   }
