@@ -105,7 +105,20 @@ export default {
           );
         })
         .then((response) => {
-          this.nodes = response.nodes;
+          this.nodes = response.nodes.sort((a, b) => {
+            const merkleA = Date.parse(a.decred_merkle_root_timestamp);
+            const merkleB = Date.parse(b.decred_merkle_root_timestamp);
+            if (merkleA < merkleB) {
+              return 1;
+            }
+            if (merkleA > merkleB) {
+              return -1;
+            }
+
+            // timestamp must be equal
+            return 0;
+          });
+
           this.loading = false;
         })
         .catch((err) => {
