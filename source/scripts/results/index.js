@@ -110,7 +110,7 @@ export default {
           );
         })
         .then((response) => {
-          this.nodes = response.nodes.sort((a, b) => {
+          this.nodes = (response.nodes || []).sort((a, b) => {
             const merkleA = Date.parse(a.decred_merkle_root_timestamp);
             const merkleB = Date.parse(b.decred_merkle_root_timestamp);
             if (merkleA < merkleB) {
