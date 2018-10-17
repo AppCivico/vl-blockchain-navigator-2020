@@ -46,9 +46,13 @@ export default {
   mounted() {
     const searchQuery = this.getQueryString()[this.config.searchKey] || '';
 
-    this.searchQueryDisplay = dayjs(searchQuery).isValid()
-      ? dayjs(searchQuery).format(this.config.formats.date)
-      : searchQuery;
+    if (/\d{11}/.test(searchQuery)) {
+      this.searchQueryDisplay = this.$options.filters.formatCPF(searchQuery);
+    } else if (dayjs(searchQuery).isValid()) {
+      this.searchQueryDisplay = dayjs(searchQuery).format(this.config.formats.date);
+    } else {
+      this.searchQueryDisplay = searchQuery;
+    }
 
     this.loadResults();
     this.showElement();
