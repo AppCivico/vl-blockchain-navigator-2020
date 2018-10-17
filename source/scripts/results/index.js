@@ -22,6 +22,10 @@ export default {
     rawSearchQuery() {
       const searchQuery = this.searchQueryDisplay || this.getQueryString()[this.config.searchKey] || '';
 
+      if (/^\d{3}[.\s]?\d{3}[.\s]?\d{3}[-\s]?\d{2}$/.test(searchQuery)) {
+        return searchQuery.replace(/[-.\s]/g, '');
+      }
+
       if (/^(\d{4})-(\d{2})-(\d{2})$/.test(searchQuery)) {
         return dayjs(searchQuery).format(this.config.formats.dateQuery);
       }
