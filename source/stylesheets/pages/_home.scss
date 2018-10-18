@@ -9,9 +9,33 @@
 .intro h2 {
   margin-top: 0;
 
+  font-weight: inherit;
   font-size: ms(-2);
 
   color: inherit;
+}
+
+.intro h2 a {
+  color: palette('anchor');
+
+  &:link {
+    text-decoration: underline;
+
+    color: palette('anchor', 'link');
+  }
+
+  &:visited {
+    color: palette('anchor', 'visited');
+  }
+
+  &:hover,
+  &:focus {
+    color: palette('anchor', 'focus');
+  }
+
+  &:active {
+    color: palette('anchor', 'active');
+  }
 }
 
 .intro figure {
