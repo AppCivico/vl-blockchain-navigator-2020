@@ -22,6 +22,10 @@ export default {
     rawSearchQuery() {
       const searchQuery = this.searchQueryDisplay || this.getQueryString()[this.config.searchKey] || '';
 
+      if (/^\d{3}[.\s]?\d{3}[.\s]?\d{3}[-\s]?\d{2}$/.test(searchQuery)) {
+        return searchQuery.replace(/[-.\s]/g, '');
+      }
+
       if (/^(\d{4})-(\d{2})-(\d{2})$/.test(searchQuery)) {
         return dayjs(searchQuery).format(this.config.formats.dateQuery);
       }
@@ -42,9 +46,13 @@ export default {
   mounted() {
     const searchQuery = this.getQueryString()[this.config.searchKey] || '';
 
-    this.searchQueryDisplay = dayjs(searchQuery).isValid()
-      ? dayjs(searchQuery).format(this.config.formats.date)
-      : searchQuery;
+    if (/\d{11}/.test(searchQuery)) {
+      this.searchQueryDisplay = this.$options.filters.formatCPF(searchQuery);
+    } else if (dayjs(searchQuery).isValid()) {
+      this.searchQueryDisplay = dayjs(searchQuery).format(this.config.formats.date);
+    } else {
+      this.searchQueryDisplay = searchQuery;
+    }
 
     this.loadResults();
     this.showElement();
@@ -102,7 +110,7 @@ export default {
           );
         })
         .then((response) => {
-          this.nodes = response.nodes.sort((a, b) => {
+          this.nodes = (response.nodes || []).sort((a, b) => {
             const merkleA = Date.parse(a.decred_merkle_root_timestamp);
             const merkleB = Date.parse(b.decred_merkle_root_timestamp);
             if (merkleA < merkleB) {

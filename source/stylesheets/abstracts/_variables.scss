@@ -131,11 +131,11 @@ $green--light: rgb(8, 180, 146);
 $green: rgb(51, 153, 153);
 $green--dark: rgb(51, 102, 102);
 $green--x-dark: rgb(16, 68, 77);
-$gray--x-light: rgb(245, 245, 245);
-$gray--light: rgb(228, 228, 228);
-$gray: rgb(186, 186, 186);
-$gray--dark: rgb(136, 136, 136);
-$gray--x-dark: rgb(75, 75, 75);
+$gray--x-light: hsl(0, 0%, 96%);
+$gray--light: hsl(0, 0%, 84%);
+$gray: hsl(0, 0%, 73%);
+$gray--dark: hsl(0, 0%, 53%);
+$gray--x-dark: hsl(0, 0%, 29%);
 $lightest: rgb(245, 245, 245);
 $darkest: rgb(57, 57, 57);
 $petrol: rgb(45, 71, 93);
@@ -167,12 +167,20 @@ $palette: (
   ),
   'debug': rgb(255, 0, 0),
   'anchor': (
-    'base': rgb(0, 102, 204),
-    'link': rgb(0, 102, 204),
+    'base': rgb(0, 105, 92),
+    'link': rgb(0, 105, 92),
     'visited': rgb(128, 0, 128),
-    'hover': rgb(50, 152, 255),
-    'focus': rgb(50, 152, 255),
-    'active': rgb(229, 0, 80),
+    'hover': rgb(21, 101, 192),
+    'focus': rgb(21, 101, 192),
+    'active': rgb(21, 101, 192),
+  ),
+  'anchor__light': (
+    'base': rgb(48, 190, 70),
+    'link': rgb(48, 190, 70),
+    'visited': rgb(193, 139, 255),
+    'hover': rgb(81, 174, 255),
+    'focus': rgb(81, 174, 255),
+    'active': rgb(81, 174, 255),
   ),
   'border': (
     'base': rgb(192, 192, 192),

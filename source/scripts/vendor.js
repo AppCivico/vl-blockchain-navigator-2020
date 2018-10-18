@@ -1,3 +1,4 @@
+// @ts-nocheck
 const Chartist = require('chartist');
 const dayjs = require('dayjs');
 const Vue = require('vue/dist/vue.min.js');
