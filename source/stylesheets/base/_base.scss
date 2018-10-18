@@ -153,6 +153,7 @@ summary {
 
   &::before {
     padding-right: 0.5em;
+
     content: '\25B6';
   }
 
@@ -222,21 +223,18 @@ hr {
 
   display: block;
 
-  /* 1 */
-  height: 0;
+  height: 0; /* 1 */
 
   padding: 0;
 
-  /* 2 */
-  overflow: visible;
+  overflow: visible; /* 2 */
 
   color: palette('gray');
 
   border: 0;
   border-top: 1px solid palette('gray');
 
-  /* 1 */
-  box-sizing: content-box;
+  box-sizing: content-box; /* 1 */
 }
 
 /* MEDIA ELEMENTS
@@ -270,11 +268,9 @@ iframe,
 progress,
 svg,
 video {
-  /* 1 */
-  display: inline-block;
+  display: inline-block; /* 1 */
 
-  /* 2 */
-  vertical-align: middle;
+  vertical-align: middle; /* 2 */
 }
 
 /**
@@ -408,8 +404,8 @@ a {
   padding: 0;
   margin: 0;
 
-  font-size: 100%;
   font-weight: font-weight('bold');
+  font-size: 100%;
 
   vertical-align: baseline;
 
@@ -473,7 +469,6 @@ address {
 
 /* Coode blocks
 ---------------------------------------------------------------------------- */
-
 pre {
   padding: $leading * 0.5rem $gutter * 0.5;
   margin: 0 0 $leading * 1rem;
