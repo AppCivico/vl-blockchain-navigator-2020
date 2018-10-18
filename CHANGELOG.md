@@ -7,4 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0][] - 2018-10-18
+
 - First official release
+
+
+[Unreleased]: https://github.com/AppCivico/vl-blockchain-navigator/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/AppCivico/vl-blockchain-navigator/tree/v1.0.0
