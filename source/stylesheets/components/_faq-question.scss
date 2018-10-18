@@ -60,12 +60,42 @@
 }
 
 .faq-item__answer {
-  background-color: palette('shadow', 'reverse');
+  font-size: ms(-1);
+
+  color: palette('text', 'light');
 
   @media screen and (min-width: calc(33em * 1.5)) {
     column-count: 2;
     column-fill: balance;
     column-gap: $gutter;
+  }
+}
+
+.faq-item__answer pre {
+  margin-right: $leading * -1rem;
+  margin-left: $leading * -1rem;
+
+  @media screen and (min-width: calc(33em * 1.5)) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.faq-item__answer a {
+  color: palette('anchor__light');
+
+  &:link {
+    color: palette('anchor__light');
+  }
+
+  &:visited {
+    color: palette('anchor__light', 'visited');
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: palette('anchor__light', 'hover');
   }
 }
 
