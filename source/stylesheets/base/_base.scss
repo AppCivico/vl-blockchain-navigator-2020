@@ -470,3 +470,21 @@ address {
 
   font-style: italic;
 }
+
+/* Coode blocks
+---------------------------------------------------------------------------- */
+
+pre {
+  padding: $leading * 0.5rem $gutter * 0.5;
+  margin: 0 0 $leading * 1rem;
+
+  font-size: ms(-1);
+
+  background-color: palette('black');
+  // border-width: $stroke;
+  // border-top-width: $gutter * 0.5;
+  // border-style: solid;
+  // border-color: palette('gray');
+
+  border-radius: $gutter * 0.5;
+}
