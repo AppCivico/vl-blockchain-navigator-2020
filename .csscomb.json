@@ -6,22 +6,17 @@
   ],
   "always-semicolon": true,
   "color-case": "lower",
-  "block-indent": "  ",
   "color-shorthand": false,
   "element-case": "lower",
   "eof-newline": true,
   "leading-zero": true,
-  "lines-between-rulesets": 1,
   "quotes": "single",
   "space-before-colon": "",
   "space-after-colon": " ",
   "space-after-combinator": " ",
-
   "space-before-opening-brace": " ",
-  "space-after-selector-delimiter": "\n",
   "space-before-selector-delimiter": "",
-  "space-before-closing-brace": "\n",
-
+  "strip-spaces": true,
   "unitless-zero": true,
   "vendor-prefix-align": true,
   "sort-order": [
@@ -196,6 +191,8 @@
       "background",
       "background-image",
       "background-position",
+      "background-position-x",
+      "background-position-y",
       "background-size",
       "background-repeat",
       "background-origin",
@@ -225,7 +222,11 @@
       "border-bottom-color",
       "border-left-color",
       "border-image",
-      "border-spacing",
+      "border-image-source",
+      "border-image-slice",
+      "border-image-width",
+      "border-image-outset",
+      "border-image-repeat",
       "border-radius",
       "border-top-left-radius",
       "border-top-right-radius",
@@ -275,6 +276,7 @@
     [
       "table-layout",
       "border-collapse",
+      "border-spacing",
       "empty-cells",
       "caption-side"
     ],
@@ -311,10 +313,21 @@
       "tab-size"
     ],
     [
+      "scroll-behavior",
+      "scroll-snap-coordinate",
+      "scroll-snap-destination",
+      "scroll-snap-points-x",
+      "scroll-snap-points-y",
+      "scroll-snap-type"
+    ],
+    [
       "$include breakpoint",
       "$include media",
       "$include mq",
-      "$include on-event"
+      "$include range-track",
+      "$include range-thumb",
+      "$include on-event",
+      "$include alert"
     ]
   ]
 }
