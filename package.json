@@ -1,6 +1,6 @@
 {
   "name": "vl-blockchain-navigator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Blockchain navigator for 2018 Brazilian election donations on VotoLegal",
   "main": "index.html",
   "scripts": {
