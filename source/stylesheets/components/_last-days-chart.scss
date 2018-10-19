@@ -43,7 +43,7 @@
 .last-days-chart figcaption {
 }
 
-.last-days-chart dl {
+.last-days-chart .definitions-wrapper {
   @media screen and (min-width: breakpoint('6col')) {
     display: table;
 
@@ -56,7 +56,7 @@
   }
 }
 
-.last-days-chart dl div {
+.last-days-chart dl {
   margin-bottom: $leading * 1rem;
 
   @media screen and (min-width: breakpoint('6col')) {
@@ -104,5 +104,5 @@
   font-weight: font-weight('text');
   font-size: ms(1);
 
-  color: palette('gray');
+  color: palette('gray', 'x-dark');
 }

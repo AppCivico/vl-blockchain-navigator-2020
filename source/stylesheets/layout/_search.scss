@@ -302,7 +302,7 @@ $time-width: 6rem;
   }
 }
 
-.search-result__metadata dl {
+.search-result__metadata .definitions-wrapper {
   overflow: hidden;
 
   @media screen and (min-width: breakpoint('6col')) {
@@ -315,7 +315,7 @@ $time-width: 6rem;
   }
 }
 
-.search-result__metadata div {
+.search-result__metadata dl {
   max-width: 100%;
 
   margin-bottom: $leading * 0.5rem;
@@ -508,12 +508,12 @@ $time-width: 6rem;
 
   background-color: palette('white');
 
-  border-spacing: 0;
   border-radius: $rounded-corner;
 
   box-shadow: 0 0 6px 0 palette('shadow');
 
   border-collapse: separate;
+  border-spacing: 0;
 }
 
 .search-result__details a {
