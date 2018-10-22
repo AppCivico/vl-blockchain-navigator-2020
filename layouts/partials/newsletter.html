@@ -21,7 +21,7 @@
               pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
               required>
             </div>
-
+            <div class="mc-status"></div>
             <div id="mce-responses" class="clear">
               <div class="response" id="mce-error-response" style="display:none"></div>
               <div class="response" id="mce-success-response" style="display:none"></div>
@@ -49,7 +49,9 @@
             'The domain portion of the email address is invalid (the portion after the @ )': 'O domínio (a parte após o @) do seu email é inválido',
             'The username portion of the email address is invalid (the portion before the @ )': 'O nome de usuário (a parte antes do @) de seu email é inválido',
             'This email address looks fake or invalid. Please enter a real email address': 'Esse email parece errado ou falso. Por favor, confira-o',
-            'is already subscribed to list': 'email já cadastrado nessa lista'
+            'is already subscribed to list': 'email já cadastrado nessa lista',
+            'Too many subscribe attempts for this email address.Please try again in about 5 minutes. (#6592)': 'Muitas tentativas seguidas de cadastrar o mesmo e-mail. Tente novamente em 5 minutos.',
+            'Thank you for subscribing!': 'Obrigado por se inscrever'
           };
 
           window.validationMessages = {

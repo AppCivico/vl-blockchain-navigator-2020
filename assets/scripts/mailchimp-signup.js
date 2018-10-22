@@ -577,7 +577,7 @@ window.displayMailChimpStatus = function (data) {
 		data.msg = window.mailchimpMessages[data.msg];
 	}
 
-	mcStatus.textContent = data.msg;
+	mcStatus.innerHTML = data.msg;
 	mcStatus.classList.add('response');
 
 	// Bring our status message into focus
