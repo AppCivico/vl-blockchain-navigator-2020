@@ -71,7 +71,7 @@
     <!-- max of 200 characters for Twitter & Facebook -->
   {{ end }}
 
-  <meta name="twitter:url" property="og:url" content="{{ . }}">
+  <meta name="twitter:url" property="og:url" content="{{ .Permalink }}">
 
   <!-- Twitter -->
   {{ with $.Site.Params.twitterUsername }}
