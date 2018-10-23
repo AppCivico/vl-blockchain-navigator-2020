@@ -37,9 +37,9 @@ params:
   tagline: ""
   twitterUsername: "appcivico"
   shareImages:
-    default: ""
-    twitter: ""
-    facebook: ""
+    default: "images/sharing/Compartilhamento_blockchain.jpg"
+    twitter: "images/sharing/Compartilhamento_twitter.jpg"
+    facebook: "images/sharing/Compartilhamento_blockchain.jpg"
   socialNetworksLinks:
     twitter: "https://twitter.com/appcivico"
     # medium: "https://medium.com/app-civico"
