@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Social sharing image metatags
 - Resources preload metatags
 - `twitter:url` metatag
 

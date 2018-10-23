@@ -48,8 +48,8 @@
     <!-- max of 150 characters for SEO -->
   {{ end }}
 
-  {{ with $.Site.Params.shareImage.default }}
-    <meta name="image" content="{{ $.Site.BaseURL }}/{{ . }}">
+  {{ with $.Site.Params.shareImages.default }}
+    <meta name="image" content="{{ (resources.Get ( . ) | fingerprint ).Permalink }}">
   {{ end }}
 
   <!-- Schema.org for Google -->
@@ -59,8 +59,8 @@
     <meta itemprop="description" content="{{ . }}">
   {{ end }}
 
-  {{ with $.Site.Params.shareImage.default }}
-    <meta itemprop="image" content="{{ . }}">
+  {{ with $.Site.Params.shareImages.default }}
+    <meta itemprop="image" content="{{ (resources.Get ( . ) | fingerprint ).Permalink }}">
   {{ end }}
 
   <!-- Twitter and Open Graph general -->
@@ -78,17 +78,17 @@
     <meta name="twitter:site" content="@{{ . }}">
     <meta name="twitter:creator" content="@{{ . }}">
   {{ end }}
-  {{ with $.Site.Params.shareImage.twitter }}
+  {{ with $.Site.Params.shareImages.twitter }}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="{{ $.Site.BaseURL }}/{{ . }}">
+    <meta name="twitter:image:src" content="{{ (resources.Get ( . ) | fingerprint ).Permalink }}">
   {{ end }}
   <!-- Maximum dimension: 1024px x 512px; minimum dimension: 440px x 220px -->
 
   <!-- Facebook -->
 
   <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-  {{ with $.Site.Params.shareImage.facebook }}
-  <meta property="og:image" content="{{ $.Site.BaseURL }}/{{ . }}"><!-- Recommended dimension: 1200px x 630px; minimum dimension: 600px x 315px -->
+  {{ with $.Site.Params.shareImages.facebook }}
+  <meta property="og:image" content="{{ (resources.Get ( . ) | fingerprint ).Permalink }}"><!-- Recommended dimension: 1200px x 630px; minimum dimension: 600px x 315px -->
   {{ end }}
 
   <meta property="og:locale" content="{{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}">
