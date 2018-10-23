@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Default details opening indicator
 
+### Fixed
+
+- Resources preload metatags
+
 ## [1.0.2][] - 2018-10-22
 
 ### Fixed
