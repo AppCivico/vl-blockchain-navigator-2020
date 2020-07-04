@@ -43,11 +43,11 @@
 {{ end }}
 
 {{ $vendorJS := resources.Get "assets/scripts/vendor.js" }}
-{{ $secureVendorJS := $vendorJS | resources.Minify | resources.Fingerprint "sha512" }}
+{{ $secureVendorJS := $vendorJS | resources.Minify | resources.Fingerprint "sha256" }}
 <script type="text/javascript" src="{{ $secureVendorJS.RelPermalink }}" integrity="{{ $secureVendorJS.Data.Integrity }}"></script>
 
 {{ $js := resources.Get "assets/scripts/index.js" }}
-{{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha512" }}
+{{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha256" }}
 <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 
 </body>

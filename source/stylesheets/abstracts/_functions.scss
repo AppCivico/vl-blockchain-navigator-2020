@@ -300,8 +300,8 @@ $_default-text-color--light: palette('text', 'light');
   }
 
   @for $i from 1 through 10 {
-    $lighter: mix(white, $light-fg, $i * 10%); // sass-lint:disable-line no-color-literals no-color-keywords
-    $darker: mix(black, $dark-fg, $i * 10%); // sass-lint:disable-line no-color-literals no-color-keywords
+    $lighter: mix(rgb(255, 255, 255), $light-fg, $i * 10%); // sass-lint:disable-line no-color-literals no-color-keywords
+    $darker: mix(rgb(0, 0, 0), $dark-fg, $i * 10%); // sass-lint:disable-line no-color-literals no-color-keywords
 
     $darker-ratio: _contrast($bg-color, $darker);
     $lighter-ratio: _contrast($bg-color, $lighter);

@@ -508,12 +508,12 @@ $time-width: 6rem;
 
   background-color: palette('white');
 
+  border-spacing: 0;
+
   border-radius: $rounded-corner;
 
   box-shadow: 0 0 6px 0 palette('shadow');
-
   border-collapse: separate;
-  border-spacing: 0;
 }
 
 .search-result__details a {

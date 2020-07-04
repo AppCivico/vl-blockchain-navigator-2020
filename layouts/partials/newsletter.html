@@ -39,7 +39,7 @@
         </form>
 
         {{ $js := resources.Get "scripts/mailchimp-signup.js" }}
-        {{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha512" }}
+        {{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha256" }}
         <script asyn src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
         <script>
           window.mailchimpMessages = {

@@ -3,7 +3,7 @@
 import config from './config';
 import utilities from './utilities';
 
-import errors from './httpErrors';
+import errors from './httpErrors.json';
 
 utilities.formatDate = function formatDate(date, format = 'YYYY-MM-DDTHH:mm:ss.SSSZ') {
   return format !== 'YYYY-MM-DDTHH:mm:ss.SSSZ'
