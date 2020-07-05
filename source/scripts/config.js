@@ -1,6 +1,6 @@
 export default {
   api: {
-    domain: (window.location.hostname.indexOf('blockchain.votolegal.com.br') !== -1 ? '' : 'api.votolegal.com.br'),
+    domain: (window.location.hostname.indexOf('blockchain2020.votolegal.com.br') !== -1 ? '' : 'api2020vl.appcivico.com'),
     pathnames: {
       lastDay: '/public-api/blockchain',
       chart: '/public-api/blockchain/chart',
