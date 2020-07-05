@@ -2,10 +2,10 @@
 http://dev.blockchain.votolegal.com.br/* http://develop.blockchain.votolegal.com.br/:splat 200
 
 # Optional: Redirect default Netlify subdomain to primary domain
-http://compassionate-wilson-441664.netlify.com/* http://blockchain.votolegal.com.br/:splat 301!
+http://xenodochial-wiles-acf82d.netlify.app/* http://blockchain2020.votolegal.com.br/:splat 301!
 
 # Redirect HTTP to HTTPS
-http://blockchain.votolegal.com.br/* https://blockchain.votolegal.com.br/:splat 301!
+http://blockchain2020.votolegal.com.br/* https://blockchain2020.votolegal.com.br/:splat 301!
 
 # Proxy API
-/public-api/* https://api.votolegal.com.br/public-api/:splat 200
+/public-api/* https://api2020vl.appcivico.com/public-api/:splat 200
