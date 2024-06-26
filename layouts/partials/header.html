@@ -5,7 +5,6 @@
 
   <meta charset="utf-8">
 
-  <link rel="dns-prefetch" href="https://cdn.polyfill.io/">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
 
   <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0" name="viewport">
@@ -112,9 +111,6 @@
   {{ end }}
 
   {{ .Hugo.Generator }}
-
-  <!-- Polyfills must load sync, since they need to be active before other script runs -->
-  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 </head>
 <body>
   {{ if ne .Kind "404" }}
